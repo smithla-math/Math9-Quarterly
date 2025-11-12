@@ -65,7 +65,7 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'lectures/lec20_22_FA_25';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Lecture 12 part 2: Plotting in Python" href="lec22_FA_25_plotting.html" />
+    <link rel="next" title="Lecture 22 part 2: Plotting in Python" href="lec22_FA_25_plotting.html" />
     <link rel="prev" title="Python Homework #1" href="../homework/pyhw1.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -178,7 +178,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Lectures 20-22</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lec22_FA_25_plotting.html">Lecture 12 part 2: Plotting in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec22_FA_25_plotting.html">Lecture 22 part 2: Plotting in Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
 <ul class="nav bd-sidenav">
@@ -467,7 +467,7 @@
 </div>
 </div>
 </div>
-<p>Now, we’ll search each of these data types for a certain number and time how long it takes. We can do this using something called a <em>Jupyter magic</em>. These are functions that work because we are in Jupyter notebook. They are not native to python.</p>
+<p>Now, we’ll search each of these data types for a certain number and time how long it takes. We can do this using something called a <em>Jupyter magic</em>. These are functions that work because we are in Jupyter notebook. They are not native to Python.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it #Example of a Jupyter magic
@@ -476,13 +476,13 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.2 ns ± 2.37 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>101 ns ± 11.4 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Recall that ns (nanoseconds) means <span class="math notranslate nohighlight">\(10^{-9}\)</span> seconds. Super fast, huh?</p>
-<p>Sometimes the computations are measured in <span class="math notranslate nohighlight">\(\mu s\)</span> (microseconds) means <span class="math notranslate nohighlight">\(10^{-6}\)</span> seconds.</p>
+<p>Recall that 1 ns (nanosecond) equals <span class="math notranslate nohighlight">\(10^{-9}\)</span> seconds. Super fast, huh?</p>
+<p>Sometimes the computations are measured in <span class="math notranslate nohighlight">\(\mu s\)</span> (microseconds), meaning <span class="math notranslate nohighlight">\(10^{-6}\)</span> seconds.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
@@ -491,7 +491,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22.6 ns ± 1.09 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>105 ns ± 9.02 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -505,7 +505,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27.9 ns ± 1.42 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>155 ns ± 33.3 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -520,12 +520,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>22 ms ± 3.79 ms per loop (mean ± std. dev. of 7 runs, 100 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>85.5 ms ± 13.6 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
 </div>
-<p>Here, ms (millisecond) means <span class="math notranslate nohighlight">\(10^{-3}\)</span> seconds.</p>
+<p>Here, 1 ms (millisecond) equals <span class="math notranslate nohighlight">\(10^{-3}\)</span> seconds.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%%time</span>it
@@ -534,7 +534,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25.8 ms ± 3.4 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>98.6 ms ± 3.37 ms per loop (mean ± std. dev. of 7 runs, 10 loops each)
 </pre></div>
 </div>
 </div>
@@ -547,7 +547,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>37.6 ns ± 4.18 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>131 ns ± 21.6 ns per loop (mean ± std. dev. of 7 runs, 10,000,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -711,7 +711,7 @@
 </section>
 <section id="alternating-list-version-1">
 <h3>Alternating List - Version 1<a class="headerlink" href="#alternating-list-version-1" title="Link to this heading">#</a></h3>
-<p>Now we try to write our alternating function. Our strategy is to first create a length <span class="math notranslate nohighlight">\(n\)</span> list of 3s, and then change the odd indices to be 7s. We already have a <code class="docutils literal notranslate"><span class="pre">constant(n)</span></code> function, so let’s use it inside of our code for <code class="docutils literal notranslate"><span class="pre">alt1(n)</span></code>.</p>
+<p>Now lets write our alternating function. Our strategy is to first create a length <span class="math notranslate nohighlight">\(n\)</span> list of 3s, and then change the odd indices to be 7s. We already have a <code class="docutils literal notranslate"><span class="pre">constant(n)</span></code> function, so let’s use it inside of our code for <code class="docutils literal notranslate"><span class="pre">alt1(n)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">alt1</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -733,7 +733,7 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1">#notation like this doesn&#39;t work for python lists. Need python arrays (later in this page)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">w</span><span class="p">[</span><span class="mi">1</span><span class="p">::</span><span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">7</span>   <span class="c1">#notation like this doesn&#39;t work for Python lists. Need Python arrays (later in this page)</span>
 </pre></div>
 </div>
 </div>
@@ -1378,7 +1378,7 @@ zeros(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>928 ns ± 187 ns per loop (mean ± std. dev. of 7 runs, 1,000,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.87 μs ± 430 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1399,7 +1399,7 @@ zeros(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1762490413.033771
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1762919810.5124736
 </pre></div>
 </div>
 </div>
@@ -1412,7 +1412,7 @@ zeros(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1762490413.045899
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1762919810.532922
 </pre></div>
 </div>
 </div>
@@ -1436,7 +1436,7 @@ zeros(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.010475397109985352
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.024092435836791992
 </pre></div>
 </div>
 </div>
@@ -1463,7 +1463,7 @@ zeros(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.42033576965332
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8.069297790527344
 </pre></div>
 </div>
 </div>
@@ -1475,7 +1475,7 @@ zeros(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104857600
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26214400
 </pre></div>
 </div>
 </div>
@@ -1494,10 +1494,10 @@ zeros(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104857600
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26214400
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5012884140014648
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.29766058921813965
 </pre></div>
 </div>
 </div>
@@ -1526,10 +1526,10 @@ zeros(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104857600
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26214400
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.455921411514282
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.813884496688843
 </pre></div>
 </div>
 </div>
@@ -1559,10 +1559,10 @@ zeros(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>104857600
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26214400
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.656151056289673
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.1064159870147705
 </pre></div>
 </div>
 </div>
@@ -1941,7 +1941,7 @@ linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None, axis=0)
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Lecture 12 part 2: Plotting in Python</p>
+        <p class="prev-next-title">Lecture 22 part 2: Plotting in Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

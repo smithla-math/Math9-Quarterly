@@ -178,7 +178,7 @@
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 7</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="lec20_22_FA_25.html">Lectures 20-22</a></li>
-<li class="toctree-l1"><a class="reference internal" href="lec22_FA_25_plotting.html">Lecture 12 part 2: Plotting in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="lec22_FA_25_plotting.html">Lecture 22 part 2: Plotting in Python</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Week 8</span></p>
 <ul class="nav bd-sidenav">
@@ -411,8 +411,7 @@
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ints-floats-bools">ints, floats, bools</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-data-types">Converting between data types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-note-on-exponents">Small note on exponents</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop-example-and-new-commands-try-and-except">while loop example, and new commands try and except</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop-example-and-new-commands-try-and-except">While loop example, and new commands try and except</a></li>
 </ul>
 </li>
 </ul>
@@ -543,7 +542,7 @@
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\ &#39;
 &lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\ &#39;
-C:\Users\lukea\AppData\Local\Temp\ipykernel_6796\1085378489.py:18: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+C:\Users\lukea\AppData\Local\Temp\ipykernel_11396\1085378489.py:18: SyntaxWarning: invalid escape sequence &#39;\ &#39;
   &#39;&#39;&#39;
 </pre></div>
 </div>
@@ -1476,7 +1475,7 @@ HELLO WORLD
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">#cannot assign a 5th element like in Matlab</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="mi">3</span>  <span class="c1">#cannot assign a 5th element in Python (but you could in Matlab).</span>
 </pre></div>
 </div>
 </div>
@@ -1533,7 +1532,7 @@ HELLO WORLD
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 3, (4, 1), &#39;test&#39;, (5, 1)}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 3, &#39;test&#39;, (4, 1), (5, 1)}
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
@@ -1638,11 +1637,11 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1840303472144
-1840303472144
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2389001895536
+2389001895536
 1000 1
-140723583068600
-1840303471056
+140718688905656
+2389001895408
 1000
 </pre></div>
 </div>
@@ -1680,8 +1679,8 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1]
 [1, 1]
-1840304777152
-1840304777152
+2389003834304
+2389003834304
 </pre></div>
 </div>
 </div>
@@ -1722,8 +1721,8 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
 [0, 2, 3]
-1840305447936
-1840305446144
+2389003905280
+2389003905728
 </pre></div>
 </div>
 </div>
@@ -1776,7 +1775,9 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test this out
 &lt;class &#39;str&#39;&gt;
-Help on class str in module builtins:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on class str in module builtins:
 
 class str(object)
  |  str(object=&#39;&#39;) -&gt; str
@@ -2206,7 +2207,9 @@ class str(object)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 9, 9, 2, 0, 4, 1]
-[1, 4, 0, 2, 9, 9, 10]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 0, 2, 9, 9, 10]
 None
 </pre></div>
 </div>
@@ -2244,7 +2247,8 @@ None
 <p>Some list methods not only return the value, but also modify the list in-place (i.e. won’t change identity of the list). The <code class="docutils literal notranslate"><span class="pre">pop()</span></code> method is a very typical example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
 <span class="n">element_pop</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># the input is index to delete in the list</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">element_pop</span><span class="p">)</span>  <span class="c1">#object we removed</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>  <span class="c1">#remaining numbers on list</span>
@@ -2261,6 +2265,24 @@ None
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#The more times you run this cell, the more elements are deleted (until we run out of elements at index 4)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+<span class="n">element_pop</span> <span class="o">=</span> <span class="n">numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span> <span class="c1"># the input is index to delete in the list</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">element_pop</span><span class="p">)</span>  <span class="c1">#object we removed</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>  <span class="c1">#remaining numbers on list</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 0, 2, 9, 10]
+9
+[1, 4, 0, 2, 10]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span> <span class="c1"># sort the list in ascending order</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> 
 <span class="n">numbers</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -2269,8 +2291,8 @@ None
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 4, 9, 10]
-[10, 9, 4, 2, 1, 0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 4, 10]
+[10, 4, 2, 1, 0]
 </pre></div>
 </div>
 </div>
@@ -2349,45 +2371,23 @@ sort(*, key=None, reverse=False) method of builtins.list instance
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mystring</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span>
+    <span class="c1">#print(x)</span>
+    <span class="c1">#print(x.islower())</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">islower</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
-False
-H False
-e
-True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H False
 e True
-l
-True
 l True
-l
-True
 l True
-o
-True
 o True
- 
-False
   False
-W
-False
 W False
-o
-True
 o True
-r
-True
 r True
-l
-True
 l True
-d
-True
 d True
 </pre></div>
 </div>
@@ -2494,7 +2494,7 @@ True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -2517,7 +2517,7 @@ True
 </div>
 </div>
 <p>A range is not like a list, the intermediate values (such as 1, 2, 3, 4, 5 in <code class="docutils literal notranslate"><span class="pre">range(0,6)</span></code> ) are not generated all at once.</p>
-<p>This is meant to save memory and space. In Matlab, a command like 1:1000000 generates a million length array, while Python’s <code class="docutils literal notranslate"><span class="pre">range(0,1000000)</span></code> only stores instructions for how to iterate these objects.</p>
+<p>This is meant to save memory and space. In Matlab, a command like 1:1000000 generates a million length array, while Python’s <code class="docutils literal notranslate"><span class="pre">range(0,1000000)</span></code> only stores instructions for how to iterate these objects. This saves Python memory, as not every use of <code class="docutils literal notranslate"><span class="pre">range(0,1000000)</span></code> uses every number in the range.</p>
 <p>Range objects are used as a computationally efficient way to build for loops. The intermediate values are calculated later, as needed.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -2670,7 +2670,8 @@ True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myrange2</span> <span class="o">=</span> <span class="n">myrange</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">100</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1">#notice that slicing myrange returns a range object</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myrange2</span> <span class="o">=</span> <span class="n">myrange</span><span class="p">[</span><span class="mi">10</span><span class="p">:</span><span class="mi">1000</span><span class="p">:</span><span class="mi">4</span><span class="p">]</span> <span class="c1">#notice that slicing myrange returns a range object.</span>
+<span class="c1">#Also note that if we go beyond the last index, we do not get an error. We simply stop before we reach 1000.</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">myrange2</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -2683,7 +2684,23 @@ True
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myrange3</span> <span class="o">=</span> <span class="n">myrange</span><span class="p">[</span><span class="mi">10</span><span class="p">::</span><span class="mi">4</span><span class="p">]</span> <span class="c1">#result should match myrange 2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myrange3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myrange3</span> <span class="o">==</span> <span class="n">myrange2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(90, 3, -4)
+True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">list</span><span class="p">(</span><span class="n">myrange2</span><span class="p">)</span>   <span class="c1">#preview of casting: change one type of object into another type</span>
+<span class="c1">#This forces Python to explicitly generate all the numbers myrange2 would iterate through.</span>
 </pre></div>
 </div>
 </div>
@@ -2745,8 +2762,8 @@ True
 <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mylist</span><span class="p">))</span>
 
 <span class="c1">#nested for loop below is going to square the first 2 terms in each list</span>
-<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">:</span>
-    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mylist</span><span class="p">:</span> <span class="c1">#x will stand for each of the 3 lists in mylist</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">):</span>  <span class="c1">#j will stand for indices 0 and 1</span>
         <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">x</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
 
@@ -2805,9 +2822,35 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate object at 0x000001AC7ABD5D50&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate object at 0x0000022C3BB2C630&gt;
 &lt;class &#39;enumerate&#39;&gt;
 [(0, [1, 16, 9, 16, 25]), (1, [81, 256]), (2, [625, 1296])]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 16, 9, 16, 25]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span> <span class="c1">#need two sets of [][] to call elements down from two layers of lists (or from the sublist of a list)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+16
 </pre></div>
 </div>
 </div>
@@ -2877,7 +2920,7 @@ True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">115</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">119</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">(</span><span class="nb">list</span><span class="p">)))</span>
 
@@ -2895,7 +2938,7 @@ True
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">116</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">120</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">enumerate</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">])))</span>
 
 <span class="ne">TypeError</span>: &#39;list&#39; object is not callable
@@ -2948,7 +2991,7 @@ True
 <p>We are already familiar with all of these data types from our previous Matlab units! Let’s review them briefly here.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">44</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">=</span> <span class="mi">46</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mi">7</span>
 
 <span class="n">n</span><span class="o">/</span><span class="n">m</span>  <span class="c1">#floating point division. Result is 6 + 2/7 in decimal form</span>
@@ -2956,7 +2999,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.285714285714286
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6.571428571428571
 </pre></div>
 </div>
 </div>
@@ -2964,16 +3007,16 @@ True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quotient</span> <span class="o">=</span> <span class="n">n</span><span class="o">//</span><span class="n">m</span> <span class="c1">#integer division</span>
-<span class="n">remainder</span> <span class="o">=</span> <span class="n">n</span><span class="o">%</span><span class="k">m</span> #integer remainder. 44 mod 7 equals 2
+<span class="n">remainder</span> <span class="o">=</span> <span class="n">n</span><span class="o">%</span><span class="k">m</span> #integer remainder. 46 mod 7 equals 4
 <span class="nb">print</span><span class="p">(</span><span class="n">quotient</span><span class="p">,</span> <span class="n">remainder</span><span class="p">)</span>
-<span class="c1">#note that 44 = 6*7 + 2</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">quotient</span><span class="si">}</span><span class="s2">*</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">remainder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>    <span class="c1">#This is a format-string or f-string.</span>
+<span class="c1">#note that 46 = 6*7 + 6</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">quotient</span><span class="si">}</span><span class="s2">*</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">remainder</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>   <span class="c1">#This is a format-string or f-string.</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 2
-44 = 6*7 + 2
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6 4
+46 = 6*7 + 4
 </pre></div>
 </div>
 </div>
@@ -2981,7 +3024,9 @@ True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">10</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">z_int</span> <span class="o">=</span> <span class="mi">10</span><span class="o">//</span><span class="mi">2</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z_int</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">z</span> <span class="o">==</span> <span class="mi">5</span>
 </pre></div>
@@ -2989,6 +3034,7 @@ True
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+5
 5
 </pre></div>
 </div>
@@ -3001,8 +3047,6 @@ True
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;z is of type : &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;5 is of type : &quot;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;z is a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="si">}</span><span class="s2"> and 5 is a </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1">#f-strings are the easiest way to mix variables and strings. More on these later.</span>
 </pre></div>
 </div>
@@ -3010,8 +3054,6 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
 &lt;class &#39;float&#39;&gt;
-z is of type :  &lt;class &#39;float&#39;&gt;
-5 is of type :  &lt;class &#39;int&#39;&gt;
 z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 </pre></div>
 </div>
@@ -3086,7 +3128,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">129</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">133</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">type</span><span class="p">(</span><span class="n">true</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;true&#39; is not defined
@@ -3108,6 +3150,18 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="c1">#Cannot plug floating point numbers into range objects</span>
 </pre></div>
 </div>
@@ -3115,10 +3169,22 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">131</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">136</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">range</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
 
 <span class="ne">TypeError</span>: &#39;float&#39; object cannot be interpreted as an integer
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>range(0, 5)
 </pre></div>
 </div>
 </div>
@@ -3136,10 +3202,28 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span><span class="o">+</span><span class="mf">0.1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="c1">#print(f&quot;{a:.16e}&quot;) #I did not need an f-string to show where the rounding issue lies, but I included it anyways.</span>
+<span class="n">a</span> <span class="o">==</span> <span class="mf">0.3</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.30000000000000004
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="dictionaries">
 <h3>Dictionaries<a class="headerlink" href="#dictionaries" title="Link to this heading">#</a></h3>
-<p>One of the most common data types, and a lot of fun to use!. They start off looking pretty similar to sets, but are an entirely diferent data type.</p>
+<p>One of the most common data types, and a lot of fun to use!. They start off looking pretty similar to sets, but are an entirely different data type.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;A&quot;</span><span class="p">:</span><span class="mi">90</span><span class="p">,</span> <span class="s2">&quot;B&quot;</span><span class="p">:</span><span class="mi">80</span><span class="p">,</span><span class="s2">&quot;C&quot;</span><span class="p">:</span><span class="mi">70</span><span class="p">,</span><span class="s2">&quot;D&quot;</span><span class="p">:</span><span class="mi">60</span><span class="p">,</span><span class="s2">&quot;F&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;S&quot;</span><span class="p">:</span><span class="mi">110</span><span class="p">,</span> <span class="s2">&quot;S+&quot;</span><span class="p">:</span><span class="mi">150</span><span class="p">}</span>
@@ -3174,7 +3258,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyError</span><span class="g g-Whitespace">                                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">135</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">142</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="ne">KeyError</span>: 0
@@ -3304,7 +3388,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">144</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">151</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="ne">NameError</span>: name &#39;sqrt&#39; is not defined
@@ -3495,7 +3579,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">156</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">163</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Error! Lists cannot go in a set</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">myset</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]}</span>
 
@@ -3521,7 +3605,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">158</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">165</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;Yasmeen&quot;</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
@@ -3638,40 +3722,13 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">s</span><span class="p">)[</span><span class="mi">1</span><span class="p">])</span> <span class="c1">#can call from list(s) without having to store it to another variable name.</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>e
 e
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">a</span> <span class="ow">in</span> <span class="n">s</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>H
-e
-l
-l
-o
- 
-E
-v
-e
-r
-y
-b
-o
-d
-y
 </pre></div>
 </div>
 </div>
@@ -3698,7 +3755,7 @@ y
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">169</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">175</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Don&#39;t expect this to work</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">dict</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
 
@@ -3756,6 +3813,7 @@ y
 </div>
 </div>
 <p>Notice that the value corresponding to 1 got updated from “b” to “c”.</p>
+<p>It’s worth noting we can cast booleans into integers. This is not required, since we can add booleans directly to integers anyways. :)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> 
@@ -3829,37 +3887,8 @@ y
 </div>
 </div>
 </section>
-<section id="small-note-on-exponents">
-<h3>Small note on exponents<a class="headerlink" href="#small-note-on-exponents" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Say I want to get 10^7, this will return something strange</span>
-<span class="mi">10</span><span class="o">^</span><span class="mi">7</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>13
-</pre></div>
-</div>
-</div>
-</div>
-<p>Be careful, then <code class="docutils literal notranslate"><span class="pre">^</span></code> operation does not exponentiate. You don’t need to worry about what it does (technically it’s the bitwise-exclusive-or operation), just know that we exponentiate with <code class="docutils literal notranslate"><span class="pre">**</span></code>.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span><span class="o">**</span><span class="mi">7</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10000000
-</pre></div>
-</div>
-</div>
-</div>
-</section>
 <section id="while-loop-example-and-new-commands-try-and-except">
-<h3>while loop example, and new commands try and except<a class="headerlink" href="#while-loop-example-and-new-commands-try-and-except" title="Link to this heading">#</a></h3>
+<h3>While loop example, and new commands try and except<a class="headerlink" href="#while-loop-example-and-new-commands-try-and-except" title="Link to this heading">#</a></h3>
 <p>Question: How many times can we run <code class="docutils literal notranslate"><span class="pre">numbers.pop(4)</span></code> method before we reach an error?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -3881,7 +3910,7 @@ y
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">182</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">186</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">while</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1">#will cause infinite loop, but an error will occur</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -3934,7 +3963,7 @@ y
 <span class="k">try</span><span class="p">:</span>
     <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; does not have a real square root&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3946,9 +3975,9 @@ y
 <span class="k">try</span><span class="p">:</span>  <span class="c1">#What we attempt to run</span>
     <span class="n">sqsqsq</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span> <span class="c1">#If there&#39;s an error</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; does not have a real square root&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>  <span class="c1">#If there&#39;s no error</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; has square root equal to &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sqsqsq</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> has square root equal to </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">sqsqsq</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3965,9 +3994,9 @@ y
 <span class="k">try</span><span class="p">:</span>
     <span class="n">sqsqsq</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; does not have a real square root&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="s2">&quot; has square root equal to &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">sqsqsq</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> has square root equal to </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">sqsqsq</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>  <span class="c1">#runs no matter what</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⠀⢀⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄</span><span class="se">\n</span><span class="s2">⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⡉⠙⠻⢿⣿⣿⣿⣿⣿⢿⣦</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⡆⠀⠀⢻⣿⣿⣿⣿⡆⠈⢳⡄</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⠈⢿⣿⣿⣿⣷⠖⠀⠀⣿⣿⣿⣿⣿⣄⠀⣿⡄</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣇⠀⢄⡙⠋⠻⡄⠀⣼⣿⣿⣿⣩⠟⠟⠀⣼⣿⡄</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣭⣤⣤⣴⣿⣿⣿⣿⣿⣿⣿⣦⣴⣿⣿⣷</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⢿⣿⣿⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⢰⣶⣄</span><span class="se">\n</span><span class="s2">⣏⣉⣛⣛⣛⣛⣥⣶⣾⣿⣿⣿⣷⡝⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⡇</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⠟</span><span class="se">\n</span><span class="s2">⡇⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠈⠁</span><span class="se">\n</span><span class="s2">⡇⠀⠹⣿⣿⣿⡿⠿⠛⣋⣥⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -4074,8 +4103,7 @@ y
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ints-floats-bools">ints, floats, bools</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dictionaries">Dictionaries</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#converting-between-data-types">Converting between data types</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#small-note-on-exponents">Small note on exponents</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop-example-and-new-commands-try-and-except">while loop example, and new commands try and except</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop-example-and-new-commands-try-and-except">While loop example, and new commands try and except</a></li>
 </ul>
 </li>
 </ul>
