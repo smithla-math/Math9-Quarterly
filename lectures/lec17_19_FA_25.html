@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -542,7 +542,7 @@
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\ &#39;
 &lt;&gt;:18: SyntaxWarning: invalid escape sequence &#39;\ &#39;
-C:\Users\lukea\AppData\Local\Temp\ipykernel_11396\1085378489.py:18: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+C:\Users\lukea\AppData\Local\Temp\ipykernel_3020\1085378489.py:18: SyntaxWarning: invalid escape sequence &#39;\ &#39;
   &#39;&#39;&#39;
 </pre></div>
 </div>
@@ -1532,7 +1532,7 @@ HELLO WORLD
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 3, &#39;test&#39;, (4, 1), (5, 1)}
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{1, 3, (4, 1), (5, 1), &#39;test&#39;}
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
@@ -1637,11 +1637,11 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2389001895536
-2389001895536
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2355740763632
+2355740763632
 1000 1
-140718688905656
-2389001895408
+140706063591864
+2355740767888
 1000
 </pre></div>
 </div>
@@ -1679,8 +1679,8 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1]
 [1, 1]
-2389003834304
-2389003834304
+2355742524928
+2355742524928
 </pre></div>
 </div>
 </div>
@@ -1721,8 +1721,8 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
 [0, 2, 3]
-2389003905280
-2389003905728
+2355742427648
+2355742528960
 </pre></div>
 </div>
 </div>
@@ -1775,9 +1775,7 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test this out
 &lt;class &#39;str&#39;&gt;
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on class str in module builtins:
+Help on class str in module builtins:
 
 class str(object)
  |  str(object=&#39;&#39;) -&gt; str
@@ -2207,9 +2205,7 @@ class str(object)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10, 9, 9, 2, 0, 4, 1]
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 0, 2, 9, 9, 10]
+[1, 4, 0, 2, 9, 9, 10]
 None
 </pre></div>
 </div>
@@ -2822,7 +2818,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate object at 0x0000022C3BB2C630&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate object at 0x000002247D30B0B0&gt;
 &lt;class &#39;enumerate&#39;&gt;
 [(0, [1, 16, 9, 16, 25]), (1, [81, 256]), (2, [625, 1296])]
 </pre></div>
@@ -3268,12 +3264,12 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;C&quot;</span><span class="p">]</span> <span class="c1">#give the value corresponding to &quot;B&quot;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]</span> <span class="c1">#give the value corresponding to &quot;B&quot;</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>70
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>80
 </pre></div>
 </div>
 </div>
@@ -3489,7 +3485,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="c1">#Note that you can have two keys with the same value (for instance, two 85s), but only one copy of each key can exist.</span>
 </pre></div>
 </div>
 </div>
@@ -3656,7 +3652,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is a &lt;class &#39;int&#39;&gt;
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
-<span class="nb">tuple</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+<span class="nb">tuple</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span> <span class="c1">#casts a list into a tuple.</span>
 </pre></div>
 </div>
 </div>
@@ -3941,25 +3937,33 @@ e
 <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">try</span><span class="p">:</span>   <span class="c1">#try attempts to run the code below. An error message will not show if we run into an error</span>
-    <span class="k">while</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1">#will cause infinite loop, but an error will occur</span>
         <span class="n">numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> 
+        <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
+        <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1">#shortcut for count = count + 1</span>
 <span class="k">except</span><span class="p">:</span> <span class="c1">#paired with try, this code will run if the code under try has an error.</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 4, 0, 2, 9, 10, 32, -1, 7777, 9876]
+[1, 4, 0, 2, 10, 32, -1, 7777, 9876]
+[1, 4, 0, 2, 32, -1, 7777, 9876]
+[1, 4, 0, 2, -1, 7777, 9876]
+[1, 4, 0, 2, 7777, 9876]
+[1, 4, 0, 2, 9876]
+[1, 4, 0, 2]
+7
 </pre></div>
 </div>
 </div>
 </div>
-<p>Note that if there is no error, nothing is outputted.</p>
+<p>Note that if there is no error, nothing is output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mi">16</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
