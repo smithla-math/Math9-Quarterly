@@ -486,7 +486,7 @@
 <p><strong>Idea:</strong> Each row of <code class="docutils literal notranslate"><span class="pre">arr</span></code> will be the result of applying Newton’s method 7 times to a single point in <code class="docutils literal notranslate"><span class="pre">np.linspace(-2,2,1000)</span></code>. “A row for each point”</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1">#instead of one initial guess, we&#39;ll try every point on the interval [-2, 2].</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>  <span class="c1">#instead of one initial guess, we&#39;ll try 1000 points on the interval [-2, 2].</span>
 <span class="n">reps</span> <span class="o">=</span> <span class="mi">7</span>
 <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="nb">len</span><span class="p">(</span><span class="n">z</span><span class="p">),</span><span class="n">reps</span><span class="o">+</span><span class="mi">1</span><span class="p">))</span>  <span class="c1">#columns are the iterations of newton&#39;s method, the rows represent each initial value (of which there are 1000)</span>
 <span class="n">arr</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">z</span>  <span class="c1">#same except for using the [:,0] instead of [0]</span>
@@ -523,7 +523,6 @@
 </div>
 </div>
 </div>
-<p>The length makes sense, because we have 1000 points.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">good_bool</span><span class="o">.</span><span class="n">shape</span>
@@ -536,6 +535,7 @@
 </div>
 </div>
 </div>
+<p>The length makes sense, because we have 1000 points.</p>
 <p>Out of the 1000 input points, we use <code class="docutils literal notranslate"><span class="pre">.sum()</span></code> to determine that 327 points lead to a good estimate for a zero of <span class="math notranslate nohighlight">\(f\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -552,10 +552,7 @@
 <p>Let’s plot these points and see where they live. There’s a mistake here, we need the size of <code class="docutils literal notranslate"><span class="pre">pts</span></code> to match the size of the <span class="math notranslate nohighlight">\(y\)</span>-values. There’s a pretty easy fix for this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">good_pts</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">good_bool</span><span class="p">]</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">good_pts</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">good_bool</span><span class="p">]</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">good_pts</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;ko&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -563,10 +560,9 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">good_pts</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">good_bool</span><span class="p">]</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
-<span class="ne">----&gt; </span><span class="mi">5</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">good_pts</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;ko&#39;</span><span class="p">)</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">good_pts</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">good_bool</span><span class="p">]</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">good_pts</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="s1">&#39;ko&#39;</span><span class="p">)</span>
 
 <span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\matplotlib\axes\_axes.py:1779,</span> in <span class="ni">Axes.plot</span><span class="nt">(self, scalex, scaley, data, *args, **kwargs)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1536</span><span class="w"> </span><span class="sd">&quot;&quot;&quot;</span>
@@ -598,16 +594,12 @@
 <span class="ne">ValueError</span>: x and y must have same first dimension, but have shapes (327,) and (1,)
 </pre></div>
 </div>
-<img alt="../_images/1a09332f4edcf9f7e543da800c282d3c72d775e61b9596bd33dfc9532ba2d262.png" src="../_images/1a09332f4edcf9f7e543da800c282d3c72d775e61b9596bd33dfc9532ba2d262.png" />
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">good_pts</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">good_bool</span><span class="p">]</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">good_pts</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">good_pts</span><span class="p">)),</span><span class="s1">&#39;ko&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">good_pts</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">good_pts</span><span class="p">)),</span><span class="s1">&#39;ko&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">fig</span>
 </pre></div>
 </div>
 </div>
@@ -618,14 +610,10 @@
 <p>Let’s update this plot to now have the bad points in red.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span><span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
-<span class="n">good_pts</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="n">good_bool</span><span class="p">]</span>
-<span class="n">bad_pts</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="o">~</span><span class="n">good_bool</span><span class="p">]</span> <span class="c1">#Negate the boolean to get the bad points</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">good_pts</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">good_pts</span><span class="p">)),</span><span class="s1">&#39;ko&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">);</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">bad_pts</span> <span class="o">=</span> <span class="n">z</span><span class="p">[</span><span class="o">~</span><span class="n">good_bool</span><span class="p">]</span> <span class="c1">#Negate the boolean to get the bad points</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">bad_pts</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">bad_pts</span><span class="p">)),</span><span class="s1">&#39;ro&#39;</span><span class="p">,</span><span class="n">markersize</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.25</span><span class="p">);</span> <span class="c1">#smaller markers so the scattered black markers still show</span>
 <span class="c1">#alpha determines the transparency of a point. alpha = 0 is totally invisible, and alpha = 1 is totally opaque.</span>
+<span class="n">fig</span>
 </pre></div>
 </div>
 </div>
@@ -638,7 +626,7 @@
 <h2>Newton’s Method vs. Bisect Method: Timing and Tradeoffs<a class="headerlink" href="#newton-s-method-vs-bisect-method-timing-and-tradeoffs" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import numpy as np</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 </pre></div>
 </div>
 </div>
@@ -685,7 +673,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>143 μs ± 13.2 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>766 μs ± 126 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -698,7 +686,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>9.59 μs ± 266 ns per loop (mean ± std. dev. of 7 runs, 100,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>118 μs ± 21.7 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1591,16 +1579,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[1]
-  [1]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0]
+  [0]
   [0]
   ...
   [1]
   [0]
-  [1]]
+  [0]]
 
- [[0]
-  [1]
+ [[1]
+  [0]
   [0]
   ...
   [0]
@@ -1611,8 +1599,8 @@
   [0]
   [0]
   ...
-  [1]
-  [1]
+  [0]
+  [0]
   [0]]
 
  ...
@@ -1626,19 +1614,19 @@
   [0]]
 
  [[0]
-  [1]
-  [1]
+  [0]
+  [0]
   ...
   [0]
-  [1]
+  [0]
   [0]]
 
  [[0]
-  [1]
-  [1]
+  [0]
+  [0]
   ...
-  [0]
-  [0]
+  [1]
+  [1]
   [0]]]
 </pre></div>
 </div>
@@ -1651,7 +1639,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/716826b282e1ab4298a6c749cdc0457b1a3730c0c130baf33f1254b959aaca0c.png" src="../_images/716826b282e1ab4298a6c749cdc0457b1a3730c0c130baf33f1254b959aaca0c.png" />
+<img alt="../_images/cee5be7fb840cb07994007a2d9d7445430c360fd6c36c0b612e45d6d6ee3d0f4.png" src="../_images/cee5be7fb840cb07994007a2d9d7445430c360fd6c36c0b612e45d6d6ee3d0f4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1661,7 +1649,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/607a8f06c2add95c77fb6345f742b8ede1ff3e91a725cc8d3b44cfe679ff1bff.png" src="../_images/607a8f06c2add95c77fb6345f742b8ede1ff3e91a725cc8d3b44cfe679ff1bff.png" />
+<img alt="../_images/4fa355015b55b38077a9bc0d9d51dce6e348510b6546d6a3389422cb4b4f5f08.png" src="../_images/4fa355015b55b38077a9bc0d9d51dce6e348510b6546d6a3389422cb4b4f5f08.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1671,7 +1659,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/fb93ceaeb669eeb8339806a1f398e154a506c209f6cb8a703549491bb8d012dc.png" src="../_images/fb93ceaeb669eeb8339806a1f398e154a506c209f6cb8a703549491bb8d012dc.png" />
+<img alt="../_images/e73102572ee4745e05048824dbbd95f428e8c624971859f08eb20d97067547c3.png" src="../_images/e73102572ee4745e05048824dbbd95f428e8c624971859f08eb20d97067547c3.png" />
 </div>
 </div>
 <p>A dissolve is less impressive on its own, but a gradual dissolve makes for a good animation. It takes just a little more work.</p>
@@ -1697,10 +1685,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/704bce002c03cc471c2661379dd81d70f18bf6dba61fa940132f0ba68f0ba278.png" src="../_images/704bce002c03cc471c2661379dd81d70f18bf6dba61fa940132f0ba68f0ba278.png" />
-<img alt="../_images/3aa84bd995fc1345300b6fbddff253b4586c4df5d24f97a77cf265c5b5b17f9f.png" src="../_images/3aa84bd995fc1345300b6fbddff253b4586c4df5d24f97a77cf265c5b5b17f9f.png" />
-<img alt="../_images/1cd16bfc4f5e872239884db21b4ac6831af9a04f6031306c0dca816eadcd30c6.png" src="../_images/1cd16bfc4f5e872239884db21b4ac6831af9a04f6031306c0dca816eadcd30c6.png" />
-<img alt="../_images/3803596a08f1c05a8d377f03127c81a4c2ddbd2138544f1952089897298ba142.png" src="../_images/3803596a08f1c05a8d377f03127c81a4c2ddbd2138544f1952089897298ba142.png" />
+<img alt="../_images/8a43285322d16c4131cbcc61c7f8c2057a894b698ae269d711520550d0220b30.png" src="../_images/8a43285322d16c4131cbcc61c7f8c2057a894b698ae269d711520550d0220b30.png" />
+<img alt="../_images/bc1ce25516d073e6e7e53ecece120309a33477607b1fd7e4e617b31d33b8d3cd.png" src="../_images/bc1ce25516d073e6e7e53ecece120309a33477607b1fd7e4e617b31d33b8d3cd.png" />
+<img alt="../_images/34ba8c1df979840e0d9b4c033b933a18f9ef621f3ae82247292ced4c68955d89.png" src="../_images/34ba8c1df979840e0d9b4c033b933a18f9ef621f3ae82247292ced4c68955d89.png" />
+<img alt="../_images/8b43495aa2dce4f0c53b9d89b901714e15bbdbbb8121d3e0a4060023bdcfafa8.png" src="../_images/8b43495aa2dce4f0c53b9d89b901714e15bbdbbb8121d3e0a4060023bdcfafa8.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1743,11 +1731,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/2c6cb7c30408fc33a3ce6f119fd3892b69b15902979ed6a744f952b8f3eb4852.png" src="../_images/2c6cb7c30408fc33a3ce6f119fd3892b69b15902979ed6a744f952b8f3eb4852.png" />
-<img alt="../_images/a416a82020c4c8bc546c3c7de351c6179d476ff786bf3efe79f5c873d3c2f484.png" src="../_images/a416a82020c4c8bc546c3c7de351c6179d476ff786bf3efe79f5c873d3c2f484.png" />
-<img alt="../_images/b45e32634034e94a1d3a730f2cdb84f88ed79ce1dd60d7caaa220729bfcf2b6e.png" src="../_images/b45e32634034e94a1d3a730f2cdb84f88ed79ce1dd60d7caaa220729bfcf2b6e.png" />
-<img alt="../_images/99bfe93c114708acbfdf7e84fed604c6e8250e02332cd4532d10d4ffa3dcef18.png" src="../_images/99bfe93c114708acbfdf7e84fed604c6e8250e02332cd4532d10d4ffa3dcef18.png" />
-<img alt="../_images/1eee6f00c06c8a18dfb2605cf2062a9f0058ead753a746c56a92324868198dc8.png" src="../_images/1eee6f00c06c8a18dfb2605cf2062a9f0058ead753a746c56a92324868198dc8.png" />
+<img alt="../_images/9bbd1e340b7166364e7c7654f4ff79b14048f6a411dd8888906076e1fde67c0c.png" src="../_images/9bbd1e340b7166364e7c7654f4ff79b14048f6a411dd8888906076e1fde67c0c.png" />
+<img alt="../_images/5e500641be8c0e50c6eb1b3a700b0a75370ca4ac3fdbe6bccfafa075c016b0f0.png" src="../_images/5e500641be8c0e50c6eb1b3a700b0a75370ca4ac3fdbe6bccfafa075c016b0f0.png" />
+<img alt="../_images/224cb926d59097e19bcca13f749de70e41ca1d7e4abcf9e0560abd3ff6dec723.png" src="../_images/224cb926d59097e19bcca13f749de70e41ca1d7e4abcf9e0560abd3ff6dec723.png" />
+<img alt="../_images/bcb6ae0e9786a026fde532b9b76f27e0ec01ecd92f3c212b9d7867cdd75b2cf3.png" src="../_images/bcb6ae0e9786a026fde532b9b76f27e0ec01ecd92f3c212b9d7867cdd75b2cf3.png" />
+<img alt="../_images/165b86560b463c12b7f990832e1b8ea6683bc30d733f7e489d0df7a0ca082f45.png" src="../_images/165b86560b463c12b7f990832e1b8ea6683bc30d733f7e489d0df7a0ca082f45.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4022,7 +4010,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/dea6a5d285c1a7aa353893686cfc658c33cb36077719735ce2e2e2177e75a573.png" src="../_images/dea6a5d285c1a7aa353893686cfc658c33cb36077719735ce2e2e2177e75a573.png" />
+<img alt="../_images/d7c7480fda20ae3c9f7de56724c3ce8a4f4e6503b921326ffa29069583eef13d.png" src="../_images/d7c7480fda20ae3c9f7de56724c3ce8a4f4e6503b921326ffa29069583eef13d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4033,7 +4021,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/68b99c1b53c92281fc908487decb907a439555524b60728bdd3ed7af1889cc5a.png" src="../_images/68b99c1b53c92281fc908487decb907a439555524b60728bdd3ed7af1889cc5a.png" />
+<img alt="../_images/0b07c261e5ac12c2d7d2a8980fd1e4fed69e35103f8c4a2ae3cb3da83e25ed24.png" src="../_images/0b07c261e5ac12c2d7d2a8980fd1e4fed69e35103f8c4a2ae3cb3da83e25ed24.png" />
 </div>
 </div>
 <p>We can blend noise into our images by taking a weighted average our image and a noise image.</p>
@@ -4075,7 +4063,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8bfc587b85fc4f509f004682635c6c9ac2e4ba8e70fc7fea7233b8ba76b97c45.png" src="../_images/8bfc587b85fc4f509f004682635c6c9ac2e4ba8e70fc7fea7233b8ba76b97c45.png" />
+<img alt="../_images/0ae3448f51723facd22d19604eaf3a6a5f152f7c9781cc6a94c43843ce21688c.png" src="../_images/0ae3448f51723facd22d19604eaf3a6a5f152f7c9781cc6a94c43843ce21688c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4086,7 +4074,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8715550e7ddfcc20145fa95004e950a3b55c55d590e338e6e190ea38b31fb138.png" src="../_images/8715550e7ddfcc20145fa95004e950a3b55c55d590e338e6e190ea38b31fb138.png" />
+<img alt="../_images/b845abf6d73285cc0fef07e6537c669d4f8db559a55aea223b72f3c53df4aa80.png" src="../_images/b845abf6d73285cc0fef07e6537c669d4f8db559a55aea223b72f3c53df4aa80.png" />
 </div>
 </div>
 <section id="more-blending-modes">
@@ -4112,7 +4100,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/670d3c33025f9f769825fe55037ef066677af5f01babf20176b83b368fa31e78.png" src="../_images/670d3c33025f9f769825fe55037ef066677af5f01babf20176b83b368fa31e78.png" />
+<img alt="../_images/5a064822e715230ef7975a13d553f8d9d28528fce529156fa17623f0a45f8c8f.png" src="../_images/5a064822e715230ef7975a13d553f8d9d28528fce529156fa17623f0a45f8c8f.png" />
 </div>
 </div>
 </section>
@@ -4137,8 +4125,8 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a56e0498ad1be00a390318296fca8e6a8424fde62812cbe342332330f1801b32.png" src="../_images/a56e0498ad1be00a390318296fca8e6a8424fde62812cbe342332330f1801b32.png" />
-<img alt="../_images/86b5d589a871b2f70a4b69d74802b27cc466355af3584e0b23c8e1bda973772d.png" src="../_images/86b5d589a871b2f70a4b69d74802b27cc466355af3584e0b23c8e1bda973772d.png" />
+<img alt="../_images/98bf28e9dc6b51f8a440e488597969932d09e01f545f1636b5cc20bb8e26faab.png" src="../_images/98bf28e9dc6b51f8a440e488597969932d09e01f545f1636b5cc20bb8e26faab.png" />
+<img alt="../_images/dd05fda607c6dd1f6bf29542b63c98be26e10b1647736be7ecce2931513f6995.png" src="../_images/dd05fda607c6dd1f6bf29542b63c98be26e10b1647736be7ecce2931513f6995.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4214,7 +4202,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/784dbecb1407d018cb764cedd45081e1e58bc6b22bfd0e02c67b6a30df4d7454.png" src="../_images/784dbecb1407d018cb764cedd45081e1e58bc6b22bfd0e02c67b6a30df4d7454.png" />
+<img alt="../_images/bffa5efde60758abe6cd1a994cb3acd69f67c9f4b3380be4eee9d471aee68197.png" src="../_images/bffa5efde60758abe6cd1a994cb3acd69f67c9f4b3380be4eee9d471aee68197.png" />
 </div>
 </div>
 </section>
@@ -4241,15 +4229,15 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_23824\4237971857.py:2: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:2: RuntimeWarning: divide by zero encountered in divide
   arr_cb = 1- (255 - np.float64(arr1))/(np.float64(arr2))
-C:\Users\lukea\AppData\Local\Temp\ipykernel_23824\4237971857.py:2: RuntimeWarning: invalid value encountered in divide
+C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:2: RuntimeWarning: invalid value encountered in divide
   arr_cb = 1- (255 - np.float64(arr1))/(np.float64(arr2))
-C:\Users\lukea\AppData\Local\Temp\ipykernel_23824\4237971857.py:6: RuntimeWarning: invalid value encountered in cast
+C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:6: RuntimeWarning: invalid value encountered in cast
   return np.uint8(arr_cb)
 </pre></div>
 </div>
-<img alt="../_images/5ec41126c74b67bea86560c2cdb2d44e12719219c70f7a09db500e3be8d46a6d.png" src="../_images/5ec41126c74b67bea86560c2cdb2d44e12719219c70f7a09db500e3be8d46a6d.png" />
+<img alt="../_images/4c9e7761f2c358ede3cf3cfe12078986bc59f972bacdb4aed0ad2b65d2f08658.png" src="../_images/4c9e7761f2c358ede3cf3cfe12078986bc59f972bacdb4aed0ad2b65d2f08658.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4261,11 +4249,11 @@ C:\Users\lukea\AppData\Local\Temp\ipykernel_23824\4237971857.py:6: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_23824\4237971857.py:2: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:2: RuntimeWarning: divide by zero encountered in divide
   arr_cb = 1- (255 - np.float64(arr1))/(np.float64(arr2))
-C:\Users\lukea\AppData\Local\Temp\ipykernel_23824\4237971857.py:2: RuntimeWarning: invalid value encountered in divide
+C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:2: RuntimeWarning: invalid value encountered in divide
   arr_cb = 1- (255 - np.float64(arr1))/(np.float64(arr2))
-C:\Users\lukea\AppData\Local\Temp\ipykernel_23824\4237971857.py:6: RuntimeWarning: invalid value encountered in cast
+C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:6: RuntimeWarning: invalid value encountered in cast
   return np.uint8(arr_cb)
 </pre></div>
 </div>
@@ -4286,8 +4274,8 @@ C:\Users\lukea\AppData\Local\Temp\ipykernel_23824\4237971857.py:6: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a5580e0b2aa592df4e5bb78e75a4d66be6c8cae25a00b5a6c2f2639ce612ac13.png" src="../_images/a5580e0b2aa592df4e5bb78e75a4d66be6c8cae25a00b5a6c2f2639ce612ac13.png" />
-<img alt="../_images/d2a2b2eac81207fc5570666912521b9c339cc954ccc0baf9c8083214b9a2371d.png" src="../_images/d2a2b2eac81207fc5570666912521b9c339cc954ccc0baf9c8083214b9a2371d.png" />
+<img alt="../_images/b1dd68b271009af9faba5e30c1648756ad2b4b1eca5fe7d469c206b6f47e151c.png" src="../_images/b1dd68b271009af9faba5e30c1648756ad2b4b1eca5fe7d469c206b6f47e151c.png" />
+<img alt="../_images/c0391c15dac82d7440db70c4f5ccfa78524a5e29f80a5a4f467a016db076b05b.png" src="../_images/c0391c15dac82d7440db70c4f5ccfa78524a5e29f80a5a4f467a016db076b05b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4297,7 +4285,7 @@ C:\Users\lukea\AppData\Local\Temp\ipykernel_23824\4237971857.py:6: RuntimeWarnin
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9836c261c9aff2fff0a58bb2212cb2d06008041201ba92cc1549e4fc613e2ad0.png" src="../_images/9836c261c9aff2fff0a58bb2212cb2d06008041201ba92cc1549e4fc613e2ad0.png" />
+<img alt="../_images/c1d2b2d203813179361395e7c7ebd0ea5c656ca4238051a69b10b040647899b7.png" src="../_images/c1d2b2d203813179361395e7c7ebd0ea5c656ca4238051a69b10b040647899b7.png" />
 </div>
 </div>
 <div class="cell docutils container">
