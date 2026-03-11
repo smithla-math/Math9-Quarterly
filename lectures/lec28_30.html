@@ -647,7 +647,7 @@
     <span class="n">newt</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">z</span><span class="p">:</span> <span class="n">z</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">z</span><span class="p">)</span><span class="o">/</span><span class="n">df</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
     <span class="n">root</span> <span class="o">=</span> <span class="n">x0</span>
     
-    <span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">root</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span> <span class="c1">#when |f(root)| is large, we are far away from the x-axis.</span>
+    <span class="k">while</span> <span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">root</span><span class="p">))</span> <span class="o">&gt;</span> <span class="n">tol</span><span class="p">:</span> <span class="c1">#when |f(root)| is large, the y-value is far away from the x-axis.</span>
         <span class="n">root</span> <span class="o">=</span> <span class="n">newt</span><span class="p">(</span><span class="n">root</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">root</span>
 </pre></div>
@@ -673,7 +673,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>766 μs ± 126 μs per loop (mean ± std. dev. of 7 runs, 1,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>378 μs ± 19.2 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -686,7 +686,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>118 μs ± 21.7 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>57.2 μs ± 3.2 μs per loop (mean ± std. dev. of 7 runs, 10,000 loops each)
 </pre></div>
 </div>
 </div>
@@ -1280,6 +1280,17 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr_colorswap</span> <span class="o">=</span> <span class="n">arr</span><span class="p">[:,:,::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">arr_colorswap</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/f1c90929dde60c1d17fe8f50d331f8f626329943b4635583851fcf5acda84940.png" src="../_images/f1c90929dde60c1d17fe8f50d331f8f626329943b4635583851fcf5acda84940.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot;images&quot;</span><span class="p">,</span><span class="s1">&#39;Red_room.jpeg&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -1429,11 +1440,12 @@
 <img alt="../_images/96f388deb385a65292a0f9c6d97cd1603593eb7edf75bfc2c886679b4892935c.png" src="../_images/96f388deb385a65292a0f9c6d97cd1603593eb7edf75bfc2c886679b4892935c.png" />
 </div>
 </div>
+<p>We will apply our <code class="docutils literal notranslate"><span class="pre">weighted_average</span></code> function to a slice of the image array, rather than the entire array. This will place our cropped and scaled red room image over the bonfire.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr_sc</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">weight</span> <span class="o">=</span> <span class="mf">0.4</span>
-<span class="n">arr_sc</span><span class="p">[:,</span> <span class="mi">120</span><span class="p">:</span><span class="mi">335</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">((</span><span class="mi">1</span><span class="o">-</span><span class="n">weight</span><span class="p">)</span><span class="o">*</span><span class="n">arr_sc</span><span class="p">[:,</span> <span class="mi">120</span><span class="p">:</span><span class="mi">335</span><span class="p">]</span> <span class="o">+</span> <span class="n">weight</span><span class="o">*</span><span class="n">r_crop_scale</span><span class="p">)</span>
+<span class="n">arr_sc</span><span class="p">[:,</span> <span class="mi">120</span><span class="p">:</span><span class="mi">335</span><span class="p">]</span> <span class="o">=</span> <span class="n">weighted_average</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">arr_sc</span><span class="p">[:,</span> <span class="mi">120</span><span class="p">:</span><span class="mi">335</span><span class="p">],</span> <span class="n">r_crop_scale</span><span class="p">)</span>
 <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">arr_sc</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1444,36 +1456,14 @@
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">weighted_average</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">arr_sc</span><span class="p">[:,</span> <span class="mi">120</span><span class="p">:</span><span class="mi">335</span><span class="p">],</span> <span class="n">r_crop_scale</span><span class="p">))</span>  <span class="c1">#not quite the same, the image only includes the slice</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/07b7439876746ee415b04ff27583d8e1177f03d89bfed6c5b1c800a202d4260f.png" src="../_images/07b7439876746ee415b04ff27583d8e1177f03d89bfed6c5b1c800a202d4260f.png" />
-</div>
-</div>
-<p>If we want the <code class="docutils literal notranslate"><span class="pre">weighted_average</span></code> function to blend the slice into the entire image, we have to do some masking. This means we will superimpose the slice with the lamp onto ash lake. This is a direct replacement, no blending.</p>
-<p>Aftewards, we do a weighted average of the masked picture with Ash Lake.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r_mask</span> <span class="o">=</span> <span class="n">arr</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">r_mask</span><span class="p">[:,</span> <span class="mi">120</span><span class="p">:</span><span class="mi">335</span><span class="p">]</span> <span class="o">=</span> <span class="n">r_crop_scale</span>
-<span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">r_mask</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">weight</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">arr_sc</span><span class="p">[:,</span> <span class="mi">120</span><span class="p">:</span><span class="mi">335</span><span class="p">]</span> <span class="o">=</span> <span class="n">weighted_average</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">arr_sc</span><span class="p">[:,</span> <span class="mi">120</span><span class="p">:</span><span class="mi">335</span><span class="p">],</span> <span class="n">r_crop_scale</span><span class="p">)</span>
+<span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">arr_sc</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <img alt="../_images/4051a439f84058b648ca3fd2888b77dd60d17a9d54937e4dd2a56cd406b68629.png" src="../_images/4051a439f84058b648ca3fd2888b77dd60d17a9d54937e4dd2a56cd406b68629.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">weighted_average</span><span class="p">(</span><span class="n">weight</span><span class="p">,</span> <span class="n">arr</span><span class="p">,</span> <span class="n">r_mask</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/3042db5110aac3d191b58211e3b48b0c2576b37e4f77023367175108f2cb8ed3.png" src="../_images/3042db5110aac3d191b58211e3b48b0c2576b37e4f77023367175108f2cb8ed3.png" />
 </div>
 </div>
 <p>Now what if we want to blend the curtains in a fancier way? Let’s get another crop with more background.</p>
@@ -1579,7 +1569,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[0]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[1]
   [0]
   [0]
   ...
@@ -1587,8 +1577,8 @@
   [0]
   [0]]
 
- [[1]
-  [0]
+ [[0]
+  [1]
   [0]
   ...
   [0]
@@ -1599,19 +1589,27 @@
   [0]
   [0]
   ...
-  [0]
+  [1]
   [0]
   [0]]
 
  ...
 
  [[0]
-  [0]
+  [1]
   [0]
   ...
   [0]
-  [0]
+  [1]
   [0]]
+
+ [[0]
+  [0]
+  [1]
+  ...
+  [0]
+  [0]
+  [1]]
 
  [[0]
   [0]
@@ -1619,14 +1617,6 @@
   ...
   [0]
   [0]
-  [0]]
-
- [[0]
-  [0]
-  [0]
-  ...
-  [1]
-  [1]
   [0]]]
 </pre></div>
 </div>
@@ -1639,7 +1629,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/cee5be7fb840cb07994007a2d9d7445430c360fd6c36c0b612e45d6d6ee3d0f4.png" src="../_images/cee5be7fb840cb07994007a2d9d7445430c360fd6c36c0b612e45d6d6ee3d0f4.png" />
+<img alt="../_images/a7f89605fc7f0a4296220eef0f925b1b72a962ec43c9cd78e2fe5744e6c82f81.png" src="../_images/a7f89605fc7f0a4296220eef0f925b1b72a962ec43c9cd78e2fe5744e6c82f81.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1649,7 +1639,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/4fa355015b55b38077a9bc0d9d51dce6e348510b6546d6a3389422cb4b4f5f08.png" src="../_images/4fa355015b55b38077a9bc0d9d51dce6e348510b6546d6a3389422cb4b4f5f08.png" />
+<img alt="../_images/f85229b9edadf1f3f16f49c5323d462250fa703936743286d36b7ae918ed2def.png" src="../_images/f85229b9edadf1f3f16f49c5323d462250fa703936743286d36b7ae918ed2def.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1659,7 +1649,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/e73102572ee4745e05048824dbbd95f428e8c624971859f08eb20d97067547c3.png" src="../_images/e73102572ee4745e05048824dbbd95f428e8c624971859f08eb20d97067547c3.png" />
+<img alt="../_images/23225a74231f4f06086a493d8facf589d85026fe1ce3ff9acf611f1936d8dd2d.png" src="../_images/23225a74231f4f06086a493d8facf589d85026fe1ce3ff9acf611f1936d8dd2d.png" />
 </div>
 </div>
 <p>A dissolve is less impressive on its own, but a gradual dissolve makes for a good animation. It takes just a little more work.</p>
@@ -1677,7 +1667,7 @@
     <span class="n">r_keep</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">keep</span><span class="p">)</span><span class="o">*</span><span class="n">r_crop_scale_2</span>
     <span class="n">img_frame</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">arr_keep</span><span class="o">+</span><span class="n">r_keep</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">n</span><span class="o">%</span><span class="k">25</span> == 0:
-        <span class="n">display</span><span class="p">(</span><span class="n">img_frame</span><span class="p">)</span> <span class="c1">#display every 20th frame, just to prevent output clutter</span>
+        <span class="n">display</span><span class="p">(</span><span class="n">img_frame</span><span class="p">)</span> <span class="c1">#display every 25th frame, just to prevent output clutter</span>
     <span class="n">anim_frames</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">img_frame</span><span class="p">)</span>
 
 <span class="n">anim_frames</span> <span class="o">=</span> <span class="n">anim_frames</span> <span class="o">+</span> <span class="n">anim_frames</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="c1">#trick to make the animation return to the beginning</span>
@@ -1685,10 +1675,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/8a43285322d16c4131cbcc61c7f8c2057a894b698ae269d711520550d0220b30.png" src="../_images/8a43285322d16c4131cbcc61c7f8c2057a894b698ae269d711520550d0220b30.png" />
-<img alt="../_images/bc1ce25516d073e6e7e53ecece120309a33477607b1fd7e4e617b31d33b8d3cd.png" src="../_images/bc1ce25516d073e6e7e53ecece120309a33477607b1fd7e4e617b31d33b8d3cd.png" />
-<img alt="../_images/34ba8c1df979840e0d9b4c033b933a18f9ef621f3ae82247292ced4c68955d89.png" src="../_images/34ba8c1df979840e0d9b4c033b933a18f9ef621f3ae82247292ced4c68955d89.png" />
-<img alt="../_images/8b43495aa2dce4f0c53b9d89b901714e15bbdbbb8121d3e0a4060023bdcfafa8.png" src="../_images/8b43495aa2dce4f0c53b9d89b901714e15bbdbbb8121d3e0a4060023bdcfafa8.png" />
+<img alt="../_images/17c9fb708db52f41872a92b381bd7fdcdd97cd307ad1f505a255728fc81f8d37.png" src="../_images/17c9fb708db52f41872a92b381bd7fdcdd97cd307ad1f505a255728fc81f8d37.png" />
+<img alt="../_images/6de762d9824538c1f4ad023aecfa56c911ada69341dff4721e09c235dad01c81.png" src="../_images/6de762d9824538c1f4ad023aecfa56c911ada69341dff4721e09c235dad01c81.png" />
+<img alt="../_images/a03ee8dc7738ae7fb20f055b429c4601ab8ac86016837c6b8b4b93bef472a050.png" src="../_images/a03ee8dc7738ae7fb20f055b429c4601ab8ac86016837c6b8b4b93bef472a050.png" />
+<img alt="../_images/4ca052c2f9730780406af5a94dad0301afc1d3cadc3e7f6e2d5d584b3669ae6e.png" src="../_images/4ca052c2f9730780406af5a94dad0301afc1d3cadc3e7f6e2d5d584b3669ae6e.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1731,11 +1721,11 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/9bbd1e340b7166364e7c7654f4ff79b14048f6a411dd8888906076e1fde67c0c.png" src="../_images/9bbd1e340b7166364e7c7654f4ff79b14048f6a411dd8888906076e1fde67c0c.png" />
-<img alt="../_images/5e500641be8c0e50c6eb1b3a700b0a75370ca4ac3fdbe6bccfafa075c016b0f0.png" src="../_images/5e500641be8c0e50c6eb1b3a700b0a75370ca4ac3fdbe6bccfafa075c016b0f0.png" />
-<img alt="../_images/224cb926d59097e19bcca13f749de70e41ca1d7e4abcf9e0560abd3ff6dec723.png" src="../_images/224cb926d59097e19bcca13f749de70e41ca1d7e4abcf9e0560abd3ff6dec723.png" />
-<img alt="../_images/bcb6ae0e9786a026fde532b9b76f27e0ec01ecd92f3c212b9d7867cdd75b2cf3.png" src="../_images/bcb6ae0e9786a026fde532b9b76f27e0ec01ecd92f3c212b9d7867cdd75b2cf3.png" />
-<img alt="../_images/165b86560b463c12b7f990832e1b8ea6683bc30d733f7e489d0df7a0ca082f45.png" src="../_images/165b86560b463c12b7f990832e1b8ea6683bc30d733f7e489d0df7a0ca082f45.png" />
+<img alt="../_images/7bc3c58cbbb6712b50a9fe1909f96ddee2bf57bfb1fb792d02564da39e54219d.png" src="../_images/7bc3c58cbbb6712b50a9fe1909f96ddee2bf57bfb1fb792d02564da39e54219d.png" />
+<img alt="../_images/052ea7de0f3edc0491141b4c1374ef4ac0cdd3ea04ab96b3283687c73e2615b5.png" src="../_images/052ea7de0f3edc0491141b4c1374ef4ac0cdd3ea04ab96b3283687c73e2615b5.png" />
+<img alt="../_images/662a2df5d80836e520f0ca204588144ccf487348659db588e0cfd29a0bfdba86.png" src="../_images/662a2df5d80836e520f0ca204588144ccf487348659db588e0cfd29a0bfdba86.png" />
+<img alt="../_images/c92c03b4f5fbd8c0adbe196d9d90bdde087b961f10b578eb9bc6ce61e79fab3d.png" src="../_images/c92c03b4f5fbd8c0adbe196d9d90bdde087b961f10b578eb9bc6ce61e79fab3d.png" />
+<img alt="../_images/6de4009f1d9a961fcf66c6d3937e0e3646f248c3ba06fd2c96f3a9f62072b1bb.png" src="../_images/6de4009f1d9a961fcf66c6d3937e0e3646f248c3ba06fd2c96f3a9f62072b1bb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -2181,7 +2171,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">103</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">102</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">arr</span><span class="p">[</span><span class="mi">200</span><span class="p">:</span><span class="mi">300</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span>
 
 <span class="ne">ValueError</span>: assignment destination is read-only
@@ -2418,7 +2408,7 @@
 <span class="n">The</span> <span class="n">above</span> <span class="n">exception</span> <span class="n">was</span> <span class="n">the</span> <span class="n">direct</span> <span class="n">cause</span> <span class="n">of</span> <span class="n">the</span> <span class="n">following</span> <span class="n">exception</span><span class="p">:</span>
 
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">125</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">124</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 
 <span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\PIL\Image.py:3281,</span> in <span class="ni">fromarray</span><span class="nt">(obj, mode)</span>
@@ -2649,7 +2639,7 @@ NEAREST
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">133</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">132</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">!=</span> <span class="s1">&#39;_&#39;</span> <span class="ow">and</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">isupper</span><span class="p">():</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">display</span><span class="p">(</span><span class="n">img</span><span class="o">.</span><span class="n">resize</span><span class="p">((</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">resample</span><span class="o">=</span><span class="n">Image</span><span class="o">.</span><span class="n">Resampling</span><span class="o">.</span><span class="n">s</span><span class="p">))</span>
@@ -3797,27 +3787,6 @@ NEAREST
 <p>Try some of the other color choices below, or pick any two colors you want with the help of <a href="https://www.google.com/search?q=rgb+color+picker"> rgb color picker </a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Theme: Pumpkin Hill</span>
-<span class="n">color1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>  <span class="c1">#dark blue      </span>
-<span class="n">color2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">240</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>  <span class="c1">#orange</span>
-
-<span class="n">Pumpkin_gradient</span> <span class="o">=</span> <span class="n">duotone_gradient</span><span class="p">(</span><span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">)</span>
-
-<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">Pumpkin_gradient</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
-
-<span class="n">Pumpkin_filter</span> <span class="o">=</span> <span class="n">gradient_filter</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">Pumpkin_gradient</span><span class="p">)</span>
-
-<span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">Pumpkin_filter</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/c48adf6167aa04f0f50e50f79435b3c82c970faa2c56efca9c60bb057e871bd2.png" src="../_images/c48adf6167aa04f0f50e50f79435b3c82c970faa2c56efca9c60bb057e871bd2.png" />
-<img alt="../_images/b79e209146375b017d0f6ca6c04e0b49a29509e24971ec7678b606663fd7fcf7.png" src="../_images/b79e209146375b017d0f6ca6c04e0b49a29509e24971ec7678b606663fd7fcf7.png" />
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Theme: Retro Nightvision</span>
 <span class="n">color1</span> <span class="o">=</span>  <span class="p">[</span><span class="mi">184</span><span class="p">,</span><span class="mi">232</span><span class="p">,</span><span class="mi">122</span><span class="p">]</span>  <span class="c1">#bright green </span>
 <span class="n">color2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">15</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">15</span><span class="p">]</span>  <span class="c1">#dark green</span>
@@ -3835,6 +3804,27 @@ NEAREST
 <div class="cell_output docutils container">
 <img alt="../_images/5e39daecb9a3cc1cfc31278c43983a7703ea180fbe96b0e5513a0d346413c35a.png" src="../_images/5e39daecb9a3cc1cfc31278c43983a7703ea180fbe96b0e5513a0d346413c35a.png" />
 <img alt="../_images/c8618aae9835a8aa53b7cd8c240c0fba457fee0dbebb9164e4352b05503dca43.png" src="../_images/c8618aae9835a8aa53b7cd8c240c0fba457fee0dbebb9164e4352b05503dca43.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Theme: Pumpkin Hill</span>
+<span class="n">color1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">]</span>  <span class="c1">#dark blue      </span>
+<span class="n">color2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">240</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>  <span class="c1">#orange</span>
+
+<span class="n">Pumpkin_gradient</span> <span class="o">=</span> <span class="n">duotone_gradient</span><span class="p">(</span><span class="n">color1</span><span class="p">,</span> <span class="n">color2</span><span class="p">)</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">Pumpkin_gradient</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">3</span><span class="p">)))</span>
+
+<span class="n">Pumpkin_filter</span> <span class="o">=</span> <span class="n">gradient_filter</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">Pumpkin_gradient</span><span class="p">)</span>
+
+<span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">Pumpkin_filter</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../_images/c48adf6167aa04f0f50e50f79435b3c82c970faa2c56efca9c60bb057e871bd2.png" src="../_images/c48adf6167aa04f0f50e50f79435b3c82c970faa2c56efca9c60bb057e871bd2.png" />
+<img alt="../_images/b79e209146375b017d0f6ca6c04e0b49a29509e24971ec7678b606663fd7fcf7.png" src="../_images/b79e209146375b017d0f6ca6c04e0b49a29509e24971ec7678b606663fd7fcf7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -3974,6 +3964,26 @@ NEAREST
 </pre></div>
 </div>
 </div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">209</span><span class="p">],</span> <span class="n">line</span> <span class="mi">17</span>
+<span class="g g-Whitespace">     </span><span class="mi">15</span> <span class="k">for</span> <span class="n">split</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="mi">4</span><span class="p">):</span>
+<span class="g g-Whitespace">     </span><span class="mi">16</span>     <span class="n">Combo_gradient</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">Creamsicle_gradient</span><span class="p">[:</span><span class="n">split</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">,::],</span> <span class="n">Creamsicle_gradient</span><span class="p">[</span><span class="n">split</span><span class="p">::</span><span class="o">-</span><span class="mi">1</span><span class="p">,::</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
+<span class="ne">---&gt; </span><span class="mi">17</span>     <span class="n">Combo_filter</span> <span class="o">=</span> <span class="n">gradient_filter</span><span class="p">(</span><span class="n">D</span><span class="p">,</span> <span class="n">Combo_gradient</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">18</span>     <span class="n">Combo_filter</span><span class="p">[:</span><span class="mi">16</span><span class="p">:,:</span><span class="mi">16</span><span class="p">:,::]</span> <span class="o">=</span> <span class="n">Combo_gradient</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span> <span class="c1">#pastes the gradient into the frames of the image</span>
+<span class="g g-Whitespace">     </span><span class="mi">19</span>     <span class="n">img_frame</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">fromarray</span><span class="p">(</span><span class="n">Combo_filter</span><span class="p">)</span>
+
+<span class="nn">Cell In[200], line 9,</span> in <span class="ni">gradient_filter</span><span class="nt">(D, gradient)</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>         <span class="n">Mask</span><span class="p">[(</span><span class="n">Mask</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">Du</span><span class="p">[:,:,</span><span class="n">channel</span><span class="p">]</span> <span class="o">==</span> <span class="n">color</span><span class="p">)]</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1">#flags any channel that matches the color in that channel</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span>         <span class="n">Du</span><span class="p">[:,:,</span><span class="n">channel</span><span class="p">][(</span><span class="n">Du</span><span class="p">[:,:,</span><span class="n">channel</span><span class="p">]</span> <span class="o">==</span> <span class="n">color</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">Mask</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)]</span> <span class="o">=</span> <span class="n">gradient</span><span class="p">[</span><span class="n">color</span><span class="p">,</span><span class="n">channel</span><span class="p">]</span>  <span class="c1">#changes the colors according to which channels are flagged.</span>
+<span class="ne">----&gt; </span><span class="mi">9</span>         <span class="n">Mask</span><span class="p">[</span><span class="n">Mask</span> <span class="o">==</span> <span class="mi">2</span><span class="p">]</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1">#Mark these channels as no longer needing to be changed.</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">uint8</span><span class="p">(</span><span class="n">Du</span><span class="p">)</span>
+
+<span class="ne">KeyboardInterrupt</span>: 
+</pre></div>
+</div>
+</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4010,7 +4020,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/d7c7480fda20ae3c9f7de56724c3ce8a4f4e6503b921326ffa29069583eef13d.png" src="../_images/d7c7480fda20ae3c9f7de56724c3ce8a4f4e6503b921326ffa29069583eef13d.png" />
+<img alt="../_images/108e56aa96f8d07c98f0200792135d4ba7c435fa52ca9e59e2d26d16a49346ca.png" src="../_images/108e56aa96f8d07c98f0200792135d4ba7c435fa52ca9e59e2d26d16a49346ca.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4021,7 +4031,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0b07c261e5ac12c2d7d2a8980fd1e4fed69e35103f8c4a2ae3cb3da83e25ed24.png" src="../_images/0b07c261e5ac12c2d7d2a8980fd1e4fed69e35103f8c4a2ae3cb3da83e25ed24.png" />
+<img alt="../_images/7797ae8be3eab5a8875edee7f358979d7a0853b25112f1455e97da38d81c8e8b.png" src="../_images/7797ae8be3eab5a8875edee7f358979d7a0853b25112f1455e97da38d81c8e8b.png" />
 </div>
 </div>
 <p>We can blend noise into our images by taking a weighted average our image and a noise image.</p>
@@ -4063,7 +4073,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/0ae3448f51723facd22d19604eaf3a6a5f152f7c9781cc6a94c43843ce21688c.png" src="../_images/0ae3448f51723facd22d19604eaf3a6a5f152f7c9781cc6a94c43843ce21688c.png" />
+<img alt="../_images/3d1e0ffc8ed02232c86b06b455bbfd45b1955e42d47b3d77e727043310893298.png" src="../_images/3d1e0ffc8ed02232c86b06b455bbfd45b1955e42d47b3d77e727043310893298.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4074,7 +4084,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b845abf6d73285cc0fef07e6537c669d4f8db559a55aea223b72f3c53df4aa80.png" src="../_images/b845abf6d73285cc0fef07e6537c669d4f8db559a55aea223b72f3c53df4aa80.png" />
+<img alt="../_images/fec7f12533a0a752cd68bf93c649148f2c288864a805855d51017f72ca5a33eb.png" src="../_images/fec7f12533a0a752cd68bf93c649148f2c288864a805855d51017f72ca5a33eb.png" />
 </div>
 </div>
 <section id="more-blending-modes">
@@ -4100,7 +4110,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5a064822e715230ef7975a13d553f8d9d28528fce529156fa17623f0a45f8c8f.png" src="../_images/5a064822e715230ef7975a13d553f8d9d28528fce529156fa17623f0a45f8c8f.png" />
+<img alt="../_images/626dae4ba74132647371759bca25aa5ba4d6e3a6fc67c52341da19b7985b06da.png" src="../_images/626dae4ba74132647371759bca25aa5ba4d6e3a6fc67c52341da19b7985b06da.png" />
 </div>
 </div>
 </section>
@@ -4125,8 +4135,8 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/98bf28e9dc6b51f8a440e488597969932d09e01f545f1636b5cc20bb8e26faab.png" src="../_images/98bf28e9dc6b51f8a440e488597969932d09e01f545f1636b5cc20bb8e26faab.png" />
-<img alt="../_images/dd05fda607c6dd1f6bf29542b63c98be26e10b1647736be7ecce2931513f6995.png" src="../_images/dd05fda607c6dd1f6bf29542b63c98be26e10b1647736be7ecce2931513f6995.png" />
+<img alt="../_images/51d19d3e96c17ab27fc33a6a4cb19d11ca0afe711aff6899586de2bf06dc3753.png" src="../_images/51d19d3e96c17ab27fc33a6a4cb19d11ca0afe711aff6899586de2bf06dc3753.png" />
+<img alt="../_images/d6349ef5d1a925b36b18176a620778fbee85b6ccf6814b61641538410631c1ad.png" src="../_images/d6349ef5d1a925b36b18176a620778fbee85b6ccf6814b61641538410631c1ad.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4202,7 +4212,7 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/bffa5efde60758abe6cd1a994cb3acd69f67c9f4b3380be4eee9d471aee68197.png" src="../_images/bffa5efde60758abe6cd1a994cb3acd69f67c9f4b3380be4eee9d471aee68197.png" />
+<img alt="../_images/f6b1df5744c8e066180e467baad1d64aedc43c853ce8aa2fbdcc876b9316edd8.png" src="../_images/f6b1df5744c8e066180e467baad1d64aedc43c853ce8aa2fbdcc876b9316edd8.png" />
 </div>
 </div>
 </section>
@@ -4229,15 +4239,15 @@ NEAREST
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:2: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_24172\4237971857.py:2: RuntimeWarning: divide by zero encountered in divide
   arr_cb = 1- (255 - np.float64(arr1))/(np.float64(arr2))
-C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:2: RuntimeWarning: invalid value encountered in divide
+C:\Users\lukea\AppData\Local\Temp\ipykernel_24172\4237971857.py:2: RuntimeWarning: invalid value encountered in divide
   arr_cb = 1- (255 - np.float64(arr1))/(np.float64(arr2))
-C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:6: RuntimeWarning: invalid value encountered in cast
+C:\Users\lukea\AppData\Local\Temp\ipykernel_24172\4237971857.py:6: RuntimeWarning: invalid value encountered in cast
   return np.uint8(arr_cb)
 </pre></div>
 </div>
-<img alt="../_images/4c9e7761f2c358ede3cf3cfe12078986bc59f972bacdb4aed0ad2b65d2f08658.png" src="../_images/4c9e7761f2c358ede3cf3cfe12078986bc59f972bacdb4aed0ad2b65d2f08658.png" />
+<img alt="../_images/3b7743b70a1ee252dc88792b53cac72931b339dfc8fd132ab05706a6103cd13f.png" src="../_images/3b7743b70a1ee252dc88792b53cac72931b339dfc8fd132ab05706a6103cd13f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4249,11 +4259,11 @@ C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:6: RuntimeWarning
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:2: RuntimeWarning: divide by zero encountered in divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_24172\4237971857.py:2: RuntimeWarning: divide by zero encountered in divide
   arr_cb = 1- (255 - np.float64(arr1))/(np.float64(arr2))
-C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:2: RuntimeWarning: invalid value encountered in divide
+C:\Users\lukea\AppData\Local\Temp\ipykernel_24172\4237971857.py:2: RuntimeWarning: invalid value encountered in divide
   arr_cb = 1- (255 - np.float64(arr1))/(np.float64(arr2))
-C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:6: RuntimeWarning: invalid value encountered in cast
+C:\Users\lukea\AppData\Local\Temp\ipykernel_24172\4237971857.py:6: RuntimeWarning: invalid value encountered in cast
   return np.uint8(arr_cb)
 </pre></div>
 </div>
@@ -4274,8 +4284,8 @@ C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:6: RuntimeWarning
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/b1dd68b271009af9faba5e30c1648756ad2b4b1eca5fe7d469c206b6f47e151c.png" src="../_images/b1dd68b271009af9faba5e30c1648756ad2b4b1eca5fe7d469c206b6f47e151c.png" />
-<img alt="../_images/c0391c15dac82d7440db70c4f5ccfa78524a5e29f80a5a4f467a016db076b05b.png" src="../_images/c0391c15dac82d7440db70c4f5ccfa78524a5e29f80a5a4f467a016db076b05b.png" />
+<img alt="../_images/484e116492909dfac058e5201e62403199e0e2a8f146f97ca93435a4085c954d.png" src="../_images/484e116492909dfac058e5201e62403199e0e2a8f146f97ca93435a4085c954d.png" />
+<img alt="../_images/72a35b1f27387b42340a3a6692a4f6d3cd506f1356617a357658cde1e9018b78.png" src="../_images/72a35b1f27387b42340a3a6692a4f6d3cd506f1356617a357658cde1e9018b78.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -4285,7 +4295,7 @@ C:\Users\lukea\AppData\Local\Temp\ipykernel_5760\4237971857.py:6: RuntimeWarning
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/c1d2b2d203813179361395e7c7ebd0ea5c656ca4238051a69b10b040647899b7.png" src="../_images/c1d2b2d203813179361395e7c7ebd0ea5c656ca4238051a69b10b040647899b7.png" />
+<img alt="../_images/9a4cdbf8f9c5f2a54cc312b427d80c066b7f7ee1ff0a970d481a479947732670.png" src="../_images/9a4cdbf8f9c5f2a54cc312b427d80c066b7f7ee1ff0a970d481a479947732670.png" />
 </div>
 </div>
 <div class="cell docutils container">

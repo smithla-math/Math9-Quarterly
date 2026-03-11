@@ -408,7 +408,6 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-introduction-to-newton-s-method">Mathematical Introduction to Newton’s Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-at-a-good-point">Applying at a good point</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-at-a-worse-point">Applying at a worse point</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-time-analyzing-newton-s-method">Next time: Analyzing Newton’s Method</a></li>
 </ul>
             </nav>
         </div>
@@ -1046,26 +1045,26 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&#39;H&#39;, &#39;C&#39;, &#39;x&#39;],
-       [&#39;N&#39;, &#39;g&#39;, &#39;H&#39;],
-       [&#39;f&#39;, &#39;V&#39;, &#39;l&#39;],
-       [&#39;V&#39;, &#39;d&#39;, &#39;Q&#39;],
-       [&#39;n&#39;, &#39;b&#39;, &#39;Z&#39;],
-       [&#39;s&#39;, &#39;Y&#39;, &#39;C&#39;],
-       [&#39;p&#39;, &#39;y&#39;, &#39;o&#39;],
-       [&#39;x&#39;, &#39;P&#39;, &#39;K&#39;],
-       [&#39;r&#39;, &#39;x&#39;, &#39;h&#39;],
-       [&#39;i&#39;, &#39;G&#39;, &#39;e&#39;],
-       [&#39;r&#39;, &#39;j&#39;, &#39;h&#39;],
-       [&#39;v&#39;, &#39;b&#39;, &#39;t&#39;],
-       [&#39;T&#39;, &#39;g&#39;, &#39;j&#39;],
-       [&#39;j&#39;, &#39;T&#39;, &#39;C&#39;],
-       [&#39;v&#39;, &#39;F&#39;, &#39;E&#39;],
-       [&#39;M&#39;, &#39;x&#39;, &#39;k&#39;],
-       [&#39;t&#39;, &#39;N&#39;, &#39;M&#39;],
-       [&#39;A&#39;, &#39;G&#39;, &#39;P&#39;],
-       [&#39;b&#39;, &#39;w&#39;, &#39;T&#39;],
-       [&#39;e&#39;, &#39;Y&#39;, &#39;O&#39;]], dtype=&#39;&lt;U1&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[&#39;g&#39;, &#39;O&#39;, &#39;E&#39;],
+       [&#39;p&#39;, &#39;u&#39;, &#39;h&#39;],
+       [&#39;O&#39;, &#39;U&#39;, &#39;B&#39;],
+       [&#39;k&#39;, &#39;v&#39;, &#39;c&#39;],
+       [&#39;s&#39;, &#39;J&#39;, &#39;p&#39;],
+       [&#39;L&#39;, &#39;i&#39;, &#39;G&#39;],
+       [&#39;J&#39;, &#39;r&#39;, &#39;l&#39;],
+       [&#39;s&#39;, &#39;j&#39;, &#39;Q&#39;],
+       [&#39;k&#39;, &#39;I&#39;, &#39;Z&#39;],
+       [&#39;V&#39;, &#39;J&#39;, &#39;I&#39;],
+       [&#39;O&#39;, &#39;Z&#39;, &#39;M&#39;],
+       [&#39;u&#39;, &#39;m&#39;, &#39;o&#39;],
+       [&#39;a&#39;, &#39;o&#39;, &#39;o&#39;],
+       [&#39;z&#39;, &#39;y&#39;, &#39;I&#39;],
+       [&#39;A&#39;, &#39;D&#39;, &#39;U&#39;],
+       [&#39;k&#39;, &#39;s&#39;, &#39;W&#39;],
+       [&#39;a&#39;, &#39;C&#39;, &#39;x&#39;],
+       [&#39;B&#39;, &#39;S&#39;, &#39;x&#39;],
+       [&#39;f&#39;, &#39;V&#39;, &#39;F&#39;],
+       [&#39;k&#39;, &#39;a&#39;, &#39;K&#39;]], dtype=&#39;&lt;U1&#39;)
 </pre></div>
 </div>
 </div>
@@ -1078,7 +1077,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;H&#39;, &#39;C&#39;, &#39;x&#39;], dtype=&#39;&lt;U1&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;g&#39;, &#39;O&#39;, &#39;E&#39;], dtype=&#39;&lt;U1&#39;)
 </pre></div>
 </div>
 </div>
@@ -1090,7 +1089,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;HCx&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;gOE&#39;
 </pre></div>
 </div>
 </div>
@@ -1103,7 +1102,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;H C x&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;g O E&#39;
 </pre></div>
 </div>
 </div>
@@ -1115,7 +1114,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;H-C-x&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;g-O-E&#39;
 </pre></div>
 </div>
 </div>
@@ -1127,7 +1126,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;H(*^____^*)C(*^____^*)x&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;g(*^____^*)O(*^____^*)E&#39;
 </pre></div>
 </div>
 </div>
@@ -1139,7 +1138,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;H and then the next letter is C and then the next letter is x&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;g and then the next letter is O and then the next letter is E&#39;
 </pre></div>
 </div>
 </div>
@@ -1152,9 +1151,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;HCx&#39;, &#39;NgH&#39;, &#39;fVl&#39;, &#39;VdQ&#39;, &#39;nbZ&#39;, &#39;sYC&#39;, &#39;pyo&#39;, &#39;xPK&#39;, &#39;rxh&#39;,
-       &#39;iGe&#39;, &#39;rjh&#39;, &#39;vbt&#39;, &#39;Tgj&#39;, &#39;jTC&#39;, &#39;vFE&#39;, &#39;Mxk&#39;, &#39;tNM&#39;, &#39;AGP&#39;,
-       &#39;bwT&#39;, &#39;eYO&#39;], dtype=&#39;&lt;U3&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;gOE&#39;, &#39;puh&#39;, &#39;OUB&#39;, &#39;kvc&#39;, &#39;sJp&#39;, &#39;LiG&#39;, &#39;Jrl&#39;, &#39;sjQ&#39;, &#39;kIZ&#39;,
+       &#39;VJI&#39;, &#39;OZM&#39;, &#39;umo&#39;, &#39;aoo&#39;, &#39;zyI&#39;, &#39;ADU&#39;, &#39;ksW&#39;, &#39;aCx&#39;, &#39;BSx&#39;,
+       &#39;fVF&#39;, &#39;kaK&#39;], dtype=&#39;&lt;U3&#39;)
 </pre></div>
 </div>
 </div>
@@ -1173,9 +1172,9 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;HCx&#39;, &#39;NgH&#39;, &#39;fVl&#39;, &#39;VdQ&#39;, &#39;nbZ&#39;, &#39;sYC&#39;, &#39;pyo&#39;, &#39;xPK&#39;, &#39;rxh&#39;,
-       &#39;iGe&#39;, &#39;rjh&#39;, &#39;vbt&#39;, &#39;Tgj&#39;, &#39;jTC&#39;, &#39;vFE&#39;, &#39;Mxk&#39;, &#39;tNM&#39;, &#39;AGP&#39;,
-       &#39;bwT&#39;, &#39;eYO&#39;], dtype=&#39;&lt;U3&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;gOE&#39;, &#39;puh&#39;, &#39;OUB&#39;, &#39;kvc&#39;, &#39;sJp&#39;, &#39;LiG&#39;, &#39;Jrl&#39;, &#39;sjQ&#39;, &#39;kIZ&#39;,
+       &#39;VJI&#39;, &#39;OZM&#39;, &#39;umo&#39;, &#39;aoo&#39;, &#39;zyI&#39;, &#39;ADU&#39;, &#39;ksW&#39;, &#39;aCx&#39;, &#39;BSx&#39;,
+       &#39;fVF&#39;, &#39;kaK&#39;], dtype=&#39;&lt;U3&#39;)
 </pre></div>
 </div>
 </div>
@@ -1880,7 +1879,7 @@ set_printoptions(precision=None, threshold=None, edgeitems=None, linewidth=None,
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x221dc019d30&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x1be397598b0&gt;]
 </pre></div>
 </div>
 <img alt="../_images/96a8ecc561d4ab690bbd7dac1cc5f029a4fb4373478dba829c20c80c109dce22.png" src="../_images/96a8ecc561d4ab690bbd7dac1cc5f029a4fb4373478dba829c20c80c109dce22.png" />
@@ -2112,7 +2111,7 @@ y = f'(x_0)(x-x_0) + f(x_0).
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_23004\326974613.py:1: RuntimeWarning: invalid value encountered in scalar divide
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>C:\Users\lukea\AppData\Local\Temp\ipykernel_13456\326974613.py:1: RuntimeWarning: invalid value encountered in scalar divide
   newt = lambda z: z - f(z)/df(z)
 </pre></div>
 </div>
@@ -2185,11 +2184,7 @@ y = f'(x_0)(x-x_0) + f(x_0).
 </div>
 </div>
 </div>
-</section>
 <hr class="docutils" />
-<section id="next-time-analyzing-newton-s-method">
-<h2>Next time: Analyzing Newton’s Method<a class="headerlink" href="#next-time-analyzing-newton-s-method" title="Link to this heading">#</a></h2>
-<p>Let <span class="math notranslate nohighlight">\(f(x) = x^3 - 2x + 2\)</span>. For each value of <span class="math notranslate nohighlight">\(z\)</span> in <code class="docutils literal notranslate"><span class="pre">np.linspace(-2,2,1000)</span></code>, apply Newton’s method 7 times, and call the result <span class="math notranslate nohighlight">\(z_7\)</span>. For how many of these 1000 values do we have <span class="math notranslate nohighlight">\(-0.001 &lt; f(z_7) &lt; 0.001\)</span>?</p>
 </section>
 </section>
 
@@ -2268,7 +2263,6 @@ y = f'(x_0)(x-x_0) + f(x_0).
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mathematical-introduction-to-newton-s-method">Mathematical Introduction to Newton’s Method</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-at-a-good-point">Applying at a good point</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#applying-at-a-worse-point">Applying at a worse point</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-time-analyzing-newton-s-method">Next time: Analyzing Newton’s Method</a></li>
 </ul>
   </nav></div>
 
