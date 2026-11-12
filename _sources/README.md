@@ -1,1 +1,3 @@
-# Math-9-SSI-25
+# Math9-Quarterly
+
+See the [online version](https://smithla-math.github.io/Math9-Quarterly/).

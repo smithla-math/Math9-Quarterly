@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Python Homework #2 &#8212; Math 9 Winter 2026</title>
+    <title>Python Homework #2 &#8212; Math 9 Fall 2026</title>
   
   
   
@@ -60,6 +60,8 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'homework/pyhw2';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -146,8 +148,8 @@
       
     
     
-    <img src="../_static/ash-vapor3.png" class="logo__image only-light" alt="Math 9 Winter 2026 - Home"/>
-    <img src="../_static/ash-vapor3.png" class="logo__image only-dark pst-js-only" alt="Math 9 Winter 2026 - Home"/>
+    <img src="../_static/ash-vapor2.png" class="logo__image only-light" alt="Math 9 Fall 2026 - Home"/>
+    <img src="../_static/ash-vapor2.png" class="logo__image only-dark pst-js-only" alt="Math 9 Fall 2026 - Home"/>
   
   
 </a></div>
@@ -164,7 +166,7 @@
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="../intro.html">
-                    UC Irvine Math 9, Winter 2026
+                    UC Irvine Math 9, Fall 2026
                 </a>
             </li>
         </ul>
@@ -401,6 +403,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-information">Group Information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-a-random-walk-and-timings">Question 1 - A random walk and timings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-a-weighted-random-walk">Question 2 - A weighted random walk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-gambler-s-ruin">Question 3 - Gambler’s Ruin</a></li>
 </ul>
             </nav>
         </div>
@@ -439,19 +442,29 @@
 <li><p>Instantiate a random number generator in NumPy and assign it the variable name <code class="docutils literal notranslate"><span class="pre">rng</span></code>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Using the <code class="docutils literal notranslate"><span class="pre">choice</span></code> method of <code class="docutils literal notranslate"><span class="pre">rng</span></code> (in other words, <code class="docutils literal notranslate"><span class="pre">rng.choice</span></code>), make a length-20 NumPy array of randomly chosen 1s and -1s, with 1 and -1 equally likely.  (Be sure you’re not using any loops in this.  Instead use the <code class="docutils literal notranslate"><span class="pre">size</span></code> keyword argument of <code class="docutils literal notranslate"><span class="pre">choice</span></code>.)  Name the resulting array <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
+<li><p>Using the <code class="docutils literal notranslate"><span class="pre">choice</span></code> method of <code class="docutils literal notranslate"><span class="pre">rng</span></code> (in other words, <code class="docutils literal notranslate"><span class="pre">rng.choice</span></code>), make a length-20 NumPy array of randomly chosen 1s and -1s, with 1 and -1 equally likely.  (Be sure you’re not using any loops in this.  Instead, use the <code class="docutils literal notranslate"><span class="pre">size</span></code> keyword argument of <code class="docutils literal notranslate"><span class="pre">choice</span></code>.)  Name the resulting array <code class="docutils literal notranslate"><span class="pre">steps</span></code>.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Compute the cumulative sum of the elements in <code class="docutils literal notranslate"><span class="pre">x</span></code> using NumPy’s <code class="docutils literal notranslate"><span class="pre">cumsum</span></code> function.  Name the result <code class="docutils literal notranslate"><span class="pre">y</span></code>. print <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> in the cell below.</p></li>
+<li><p>Compute the cumulative sum of the elements in <code class="docutils literal notranslate"><span class="pre">steps</span></code> using NumPy’s <code class="docutils literal notranslate"><span class="pre">cumsum</span></code> function. Try both <code class="docutils literal notranslate"><span class="pre">np.cumsum(steps)</span></code> and <code class="docutils literal notranslate"><span class="pre">steps.cumsum()</span></code>. Which do you prefer?</p></li>
+<li><p>Whichever of the two options above you choose,  name the result <code class="docutils literal notranslate"><span class="pre">w</span></code>.</p></li>
+<li><p>Print <code class="docutils literal notranslate"><span class="pre">steps</span></code> and <code class="docutils literal notranslate"><span class="pre">w</span></code> in the cell below.</p></li>
 </ul>
-<p>How do the values of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> relate to each other? What is the pattern? Furthermore, if <code class="docutils literal notranslate"><span class="pre">y</span></code> was considered to be a random walk, how does <code class="docutils literal notranslate"><span class="pre">x</span></code> relate to <code class="docutils literal notranslate"><span class="pre">y</span></code>?</p>
-<p><em>Write your explanation here:</em></p>
 <ul class="simple">
-<li><p>Make a length ten million NumPy array with randomly chosen 1s and -1s.  Again name the result <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
-<li><p>What proportion of the values in <code class="docutils literal notranslate"><span class="pre">x</span></code> are 1? Compute this using a for loop and an if statement.  (If your answer isn’t close to 0.5, then check your code for mistakes.)</p></li>
-<li><p>What proportion of the values in <code class="docutils literal notranslate"><span class="pre">x</span></code> are 1?  Compute this using a Boolean array, <code class="docutils literal notranslate"><span class="pre">np.count_nonzero</span></code> and dividing.</p></li>
-<li><p>What proportion of the values in <code class="docutils literal notranslate"><span class="pre">x</span></code> are 1?  Compute this using <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> or <code class="docutils literal notranslate"><span class="pre">x.mean</span></code>.</p></li>
-<li><p>(Make sure your answers to the above 3 questions are the same.)</p></li>
+<li><p>How do the values of <code class="docutils literal notranslate"><span class="pre">steps</span></code> and <code class="docutils literal notranslate"><span class="pre">w</span></code> relate to each other? What is the pattern? Furthermore, if <code class="docutils literal notranslate"><span class="pre">w</span></code> was considered to be a random walk, how does <code class="docutils literal notranslate"><span class="pre">steps</span></code> relate to <code class="docutils literal notranslate"><span class="pre">w</span></code>?</p></li>
+</ul>
+<ul class="simple">
+<li><p><em>Write your explanation here:</em></p></li>
+</ul>
+<ul class="simple">
+<li><p>Make a length ten million NumPy array with randomly chosen 1s and -1s.  Again name the result <code class="docutils literal notranslate"><span class="pre">steps</span></code>.</p></li>
+<li><p>What proportion of the values in <code class="docutils literal notranslate"><span class="pre">steps</span></code> are 1?</p>
+<ul>
+<li><p>Compute this using a for loop and an if statement.  (If your answer isn’t close to 0.5, then check your code for mistakes.)</p></li>
+<li><p>Compute this using a Boolean array, <code class="docutils literal notranslate"><span class="pre">np.count_nonzero</span></code> and dividing.</p></li>
+<li><p>Compute this using <code class="docutils literal notranslate"><span class="pre">np.mean</span></code> or <code class="docutils literal notranslate"><span class="pre">steps.mean</span></code>.</p></li>
+<li><p>Make sure your answers to the above 3 parts are the same.</p></li>
+</ul>
+</li>
 <li><p>How do these computations compare in terms of speed?  Answer using <code class="docutils literal notranslate"><span class="pre">%%timeit</span></code>.</p></li>
 </ul>
 </section>
@@ -459,12 +472,14 @@
 <h2>Question 2 - A weighted random walk<a class="headerlink" href="#question-2-a-weighted-random-walk" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Check the documentation for the <code class="docutils literal notranslate"><span class="pre">choice</span></code> method of <code class="docutils literal notranslate"><span class="pre">rng</span></code>.  Notice that there is an argument for assigning weights to the different options.</p></li>
-<li><p>Make a length ten million NumPy array <code class="docutils literal notranslate"><span class="pre">z</span></code> of 1s and -1s, where -1 is chosen 50.1% of the time, and where 1 is chosen 49.9% of the time.</p></li>
-<li><p>Check what proportion of the elements in <code class="docutils literal notranslate"><span class="pre">z</span></code> are equal to 1.  The number should be very close to 0.499 (definitely closer to 0.499 than to 0.5).</p></li>
+<li><p>Make a length ten million NumPy array <code class="docutils literal notranslate"><span class="pre">steps</span></code> of 1s and -1s, where -1 is chosen 50.1% of the time, and where 1 is chosen 49.9% of the time.</p></li>
+<li><p>Check what proportion of the elements in <code class="docutils literal notranslate"><span class="pre">steps</span></code> are equal to 1.  The number should be very close to 0.499 (definitely closer to 0.499 than to 0.5).</p></li>
 </ul>
 <ul class="simple">
-<li><p>Make a length 10 million weighted random walk corresponding to <code class="docutils literal notranslate"><span class="pre">z</span></code>.  Save the resulting NumPy array with the variable name <code class="docutils literal notranslate"><span class="pre">w</span></code>.</p></li>
+<li><p>Make a length 10 million weighted random walk <code class="docutils literal notranslate"><span class="pre">w</span></code> corresponding to the steps in <code class="docutils literal notranslate"><span class="pre">steps</span></code>.</p></li>
 </ul>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> package to plot the height of the random walk over time.</p>
+<p>In the questions below (from now until the bottom of the page), please be sure to directly compute the values. Do not rely on the graph above.</p>
 <ul class="simple">
 <li><p>What proportion of elements in <code class="docutils literal notranslate"><span class="pre">w</span></code> do you expect to be positive?  Compute this proportion.  Did it match your expectation?</p></li>
 <li><p>What is the maximum value in <code class="docutils literal notranslate"><span class="pre">w</span></code>?  What is the minimum value in <code class="docutils literal notranslate"><span class="pre">w</span></code>?</p></li>
@@ -472,11 +487,52 @@
 <li><p>What was the value of <code class="docutils literal notranslate"><span class="pre">w</span></code> at these indices?  (This should be as easy evaluating <code class="docutils literal notranslate"><span class="pre">w[m]</span></code>.)</p></li>
 </ul>
 <ul class="simple">
-<li><p>Again using <code class="docutils literal notranslate"><span class="pre">np.nonzero</span></code>, find all the indices where <code class="docutils literal notranslate"><span class="pre">w</span></code> is positive.  (If <code class="docutils literal notranslate"><span class="pre">w</span></code> is never positive, then re-compute <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> to get new random values.)  Name the array of these indices <code class="docutils literal notranslate"><span class="pre">inds</span></code>.</p></li>
-<li><p>Let <code class="docutils literal notranslate"><span class="pre">mpi</span></code> (for maximum positive index) be the maximum index where <code class="docutils literal notranslate"><span class="pre">w</span></code> is positive.</p></li>
-<li><p>Print <code class="docutils literal notranslate"><span class="pre">mpi</span></code>.</p></li>
-<li><p>What proportion of the way into the walk does the value of <code class="docutils literal notranslate"><span class="pre">w</span></code> become negative and never switch back?</p></li>
+<li><p>Again using <code class="docutils literal notranslate"><span class="pre">np.nonzero</span></code>, find all the indices where <code class="docutils literal notranslate"><span class="pre">w</span></code> is positive.  (If <code class="docutils literal notranslate"><span class="pre">w</span></code> is never positive, then re-compute <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">steps</span></code> to get new random values.)  Name the array of these indices <code class="docutils literal notranslate"><span class="pre">inds</span></code>.</p></li>
+<li><p>Let <code class="docutils literal notranslate"><span class="pre">mpi</span></code> (for maximum positive index) be the maximum index where <code class="docutils literal notranslate"><span class="pre">w</span></code> is positive. That is, if <code class="docutils literal notranslate"><span class="pre">w[i]</span> <span class="pre">&gt;</span> <span class="pre">0</span></code>, then <code class="docutils literal notranslate"><span class="pre">i</span> <span class="pre">&lt;=</span> <span class="pre">mpi</span></code>. Print <code class="docutils literal notranslate"><span class="pre">mpi</span></code>.</p></li>
+<li><p>What percentage of the way into the walk does the value of <code class="docutils literal notranslate"><span class="pre">w</span></code> become negative and never switch back? Your answer will depend on your outputs for <code class="docutils literal notranslate"><span class="pre">w</span></code> and <code class="docutils literal notranslate"><span class="pre">mpi</span></code>.</p></li>
 </ul>
+</section>
+<section id="question-3-gambler-s-ruin">
+<h2>Question 3 - Gambler’s Ruin<a class="headerlink" href="#question-3-gambler-s-ruin" title="Link to this heading">#</a></h2>
+<p>In the game of Roulette, a ball is tossed onto a spinning wheel with 38 numbers. 18 of the numbers are red, 18 of the numbers are black, and 2 of the numbers, 0 and 00, are green (Note: We will assume Las Vegas rules with 38 numbers. Monte Carlo uses 37 numbers and only one green number, 0.)</p>
+<p>A player that bets on 1 dollar on red will win +1 dollar if the ball lands on red, and lose -1 dollar if not. The chance of winning in this case is <span class="math notranslate nohighlight">\(16/38 \approx 0.42105\)</span>. This puts the player at a disadvantage, but just how large of a disadvantage is it?</p>
+<p>If one gambles by repeatedly placing 1 dollar bets, then the wins and losses of the gambler can be modeled using a random walk.</p>
+<p>Suppose 1000 gamblers place 100 bets on red, 1 dollar at a time. How many of these gamblers end up with a positive winnings at the end of their 100 bets?</p>
+<ul class="simple">
+<li><p>Make a size (1000,100) NumPy array <code class="docutils literal notranslate"><span class="pre">steps</span></code> of 1s and -1s, where -1 is chosen with chance 22/38, and where 1 is chosen with chance 16/38. Row <code class="docutils literal notranslate"><span class="pre">i</span></code> represents gambler <code class="docutils literal notranslate"><span class="pre">i</span></code>, and column <code class="docutils literal notranslate"><span class="pre">j</span></code> represents their <code class="docutils literal notranslate"><span class="pre">j</span></code>th bet.</p></li>
+<li><p>Make a size (1000, 100) array <code class="docutils literal notranslate"><span class="pre">w</span></code>, where each row is the random walk for each gambler, corresponding to the steps in <code class="docutils literal notranslate"><span class="pre">steps</span></code>. You may use the <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword in the <code class="docutils literal notranslate"><span class="pre">cumsum</span></code> function.</p></li>
+<li><p>Count the percentage of successful gamblers as <code class="docutils literal notranslate"><span class="pre">successes</span></code>, based on whether their final score is positive.</p></li>
+<li><p>Count <code class="docutils literal notranslate"><span class="pre">big_successes</span></code> as the percentage of gamblers with winnings higher than +10.</p></li>
+</ul>
+<ul class="simple">
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package to create a histogram of the final scores for each of the gamblers</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span>
+    <span class="n">w</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+    <span class="n">binwidth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">facet_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">margin_titles</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">w</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">binwidth</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">facet_kws</span><span class="o">=</span><span class="nb">dict</span><span class="p">(</span><span class="n">margin_titles</span><span class="o">=</span><span class="kc">True</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;w&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 </section>
 
@@ -550,6 +606,7 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#group-information">Group Information</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-1-a-random-walk-and-timings">Question 1 - A random walk and timings</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-2-a-weighted-random-walk">Question 2 - A weighted random walk</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#question-3-gambler-s-ruin">Question 3 - Gambler’s Ruin</a></li>
 </ul>
   </nav></div>
 
