@@ -478,7 +478,31 @@
 <ul class="simple">
 <li><p>Make a length 10 million weighted random walk <code class="docutils literal notranslate"><span class="pre">w</span></code> corresponding to the steps in <code class="docutils literal notranslate"><span class="pre">steps</span></code>.</p></li>
 </ul>
-<p>Use the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> package to plot the height of the random walk over time.</p>
+<p>Use the <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code> package to plot the height of the random walk over time. Some sample code is provide below, but you will need to generate w first.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">mydomain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mydomain</span><span class="p">,</span><span class="n">w</span><span class="p">);</span> <span class="c1">#You will have to generate w above before this line will run properly</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">mydomain</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="o">**</span><span class="mi">7</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mydomain</span><span class="p">,</span><span class="n">w</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;np&#39; is not defined
+</pre></div>
+</div>
+<img alt="../_images/f9de3a2f25fab931256dc5710a13c289845f7e47971d82474149f03b5eddb4c3.png" src="../_images/f9de3a2f25fab931256dc5710a13c289845f7e47971d82474149f03b5eddb4c3.png" />
+</div>
+</div>
 <p>In the questions below (from now until the bottom of the page), please be sure to directly compute the values. Do not rely on the graph above.</p>
 <ul class="simple">
 <li><p>What proportion of elements in <code class="docutils literal notranslate"><span class="pre">w</span></code> do you expect to be positive?  Compute this proportion.  Did it match your expectation?</p></li>
@@ -505,7 +529,7 @@
 <li><p>Count <code class="docutils literal notranslate"><span class="pre">big_successes</span></code> as the percentage of gamblers with winnings higher than +10.</p></li>
 </ul>
 <ul class="simple">
-<li><p>Use the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package to create a histogram of the final scores for each of the gamblers</p></li>
+<li><p>Use the <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> package to create a histogram of the final scores for each of the gamblers. Some sample code is provided below, but you will have to generate w first.</p></li>
 </ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -521,7 +545,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">w</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">],</span>

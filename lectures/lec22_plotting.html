@@ -401,13 +401,10 @@
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-based-method-for-only-one-plot">State-based method, for only one plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-method-for-one-or-more-plots-this-is-much-better-to-use-in-general">Object Oriented Method, for one or more plots. This is much better to use in general!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots">Multiple Plots</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-see-two-methods-to-clean-up-this-code-a-bit"><strong>Goal:</strong> see two methods to clean up this code a bit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-clean-up-this-code-a-bit"><strong>Goal:</strong> clean up this code a bit</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-labeling-and-styling-in-matplotlib">Further Labeling and Styling in Matplotlib</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-with-tooltips-the-altair-package">Plot with tooltips: the Altair package</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-labeling-and-styling-in-matplotlib">Further Labeling and Styling in Matplotlib</a></li>
 </ul>
             </nav>
         </div>
@@ -434,7 +431,8 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">));</span>  <span class="c1"># use plt.plot for one plot</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">);</span>  <span class="c1"># use plt.plot for one plot</span>
 </pre></div>
 </div>
 </div>
@@ -723,60 +721,12 @@ subplots(nrows: &#39;int&#39; = 1, ncols: &#39;int&#39; = 1, *, sharex: &quot;bo
 <img alt="../_images/322b5c30d4fc0f4c8fc40e33a82f3ae9271cf86519bbb3a5a83096b61e3cc506.png" src="../_images/322b5c30d4fc0f4c8fc40e33a82f3ae9271cf86519bbb3a5a83096b61e3cc506.png" />
 </div>
 </div>
-<section id="goal-see-two-methods-to-clean-up-this-code-a-bit">
-<h3><strong>Goal:</strong> see two methods to clean up this code a bit<a class="headerlink" href="#goal-see-two-methods-to-clean-up-this-code-a-bit" title="Link to this heading">#</a></h3>
-<p><strong>Method 1:</strong> For loop on an enumerate object</p>
+<section id="goal-clean-up-this-code-a-bit">
+<h3><strong>Goal:</strong> clean up this code a bit<a class="headerlink" href="#goal-clean-up-this-code-a-bit" title="Link to this heading">#</a></h3>
+<p>Create a <code class="docutils literal notranslate"><span class="pre">zip</span></code> object, then for loop on it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">k_list</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3, 5, 7, 10]
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">k_list</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;i = </span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2"> corresponds to k = </span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>i = 0 corresponds to k = 1
-i = 1 corresponds to k = 2
-i = 2 corresponds to k = 3
-i = 3 corresponds to k = 5
-i = 4 corresponds to k = 7
-i = 5 corresponds to k = 10
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
-<span class="n">axs_flat</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-
-<span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">k</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">k_list</span><span class="p">):</span>
-    <span class="n">ax</span> <span class="o">=</span> <span class="n">axs_flat</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">k</span> <span class="o">*</span> <span class="n">x</span><span class="p">)</span>
-    <span class="n">y</span> <span class="o">=</span> <span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
-    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">);</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="../_images/322b5c30d4fc0f4c8fc40e33a82f3ae9271cf86519bbb3a5a83096b61e3cc506.png" src="../_images/322b5c30d4fc0f4c8fc40e33a82f3ae9271cf86519bbb3a5a83096b61e3cc506.png" />
-</div>
-</div>
-<p><strong>Method 2:</strong> Create a <code class="docutils literal notranslate"><span class="pre">zip</span></code> object, then for loop on it.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#example of a zip object</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#Recall: example of a zip object</span>
 <span class="n">a_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
 <span class="n">b_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a_list</span><span class="p">,</span> <span class="n">b_list</span><span class="p">):</span>
@@ -800,7 +750,7 @@ i = 5 corresponds to k = 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x28202b41640&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;zip at 0x251458acd00&gt;
 </pre></div>
 </div>
 </div>
@@ -833,7 +783,7 @@ i = 5 corresponds to k = 10
 <p>The code below, with a for loop on a zip object, is shorter and simpler to use than the for loop on an enumerate object.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">axs</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">sharex</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span> <span class="n">sharey</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
 <span class="n">axs_flat</span> <span class="o">=</span> <span class="n">axs</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">ax</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">k_list</span><span class="p">,</span> <span class="n">axs_flat</span><span class="p">):</span>
@@ -844,7 +794,7 @@ i = 5 corresponds to k = 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/322b5c30d4fc0f4c8fc40e33a82f3ae9271cf86519bbb3a5a83096b61e3cc506.png" src="../_images/322b5c30d4fc0f4c8fc40e33a82f3ae9271cf86519bbb3a5a83096b61e3cc506.png" />
+<img alt="../_images/3781e49c694c3899bda1dae619693cab8de3005c5399cc0f5930da67288cf6cc.png" src="../_images/3781e49c694c3899bda1dae619693cab8de3005c5399cc0f5930da67288cf6cc.png" />
 </div>
 </div>
 </section>
@@ -937,20 +887,9 @@ i = 5 corresponds to k = 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/5298feb01053a72dcd343013e082a1f55000baeee81621c23c3cc668a549832f.png" src="../_images/5298feb01053a72dcd343013e082a1f55000baeee81621c23c3cc668a549832f.png" />
+<img alt="../_images/210de23f352ff6581184938d55d0834a4b0d9f19233b18133cc72f021003b070.png" src="../_images/210de23f352ff6581184938d55d0834a4b0d9f19233b18133cc72f021003b070.png" />
 </div>
 </div>
-<section id="plot-with-tooltips-the-altair-package">
-<h3>Plot with tooltips: the Altair package<a class="headerlink" href="#plot-with-tooltips-the-altair-package" title="Link to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">altair</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>More to be added soon!</p>
-</section>
 </section>
 </section>
 
@@ -1022,13 +961,10 @@ i = 5 corresponds to k = 10
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#state-based-method-for-only-one-plot">State-based method, for only one plot</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#object-oriented-method-for-one-or-more-plots-this-is-much-better-to-use-in-general">Object Oriented Method, for one or more plots. This is much better to use in general!</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiple-plots">Multiple Plots</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-see-two-methods-to-clean-up-this-code-a-bit"><strong>Goal:</strong> see two methods to clean up this code a bit</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#goal-clean-up-this-code-a-bit"><strong>Goal:</strong> clean up this code a bit</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-labeling-and-styling-in-matplotlib">Further Labeling and Styling in Matplotlib</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#plot-with-tooltips-the-altair-package">Plot with tooltips: the Altair package</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#further-labeling-and-styling-in-matplotlib">Further Labeling and Styling in Matplotlib</a></li>
 </ul>
   </nav></div>
 

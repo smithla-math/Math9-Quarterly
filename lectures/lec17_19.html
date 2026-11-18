@@ -420,7 +420,7 @@
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-exercise">Casting Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop-example-and-new-commands-try-and-except">While loop example, and new commands try and except</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop-example-and-new-commands-try-and-except">While loop example, and new commands <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -562,7 +562,7 @@
 <div class="cell_output docutils container">
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\ &#39;
 &lt;&gt;:1: SyntaxWarning: invalid escape sequence &#39;\ &#39;
-C:\Users\lukea\AppData\Local\Temp\ipykernel_11644\24162209.py:1: SyntaxWarning: invalid escape sequence &#39;\ &#39;
+C:\Users\lukea\AppData\Local\Temp\ipykernel_3368\24162209.py:1: SyntaxWarning: invalid escape sequence &#39;\ &#39;
   &#39;&#39;&#39;
 </pre></div>
 </div>
@@ -1728,11 +1728,11 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2044617810864
-2044617810864
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2704249267696
+2704249267696
 1000 1
-2044617810864 140733243009464
-2044617810864 2044617816784
+2704249267696 140718682483128
+2704249267696 2704249270992
 </pre></div>
 </div>
 </div>
@@ -1769,8 +1769,8 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1]
 [1, 1]
-2044619845632
-2044619845632
+2704251318656
+2704251318656
 </pre></div>
 </div>
 </div>
@@ -1811,8 +1811,8 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 2, 3]
 [0, 2, 3]
-2044619525824
-2044619845248
+2704251168320
+2704251317312
 </pre></div>
 </div>
 </div>
@@ -1873,7 +1873,9 @@ True
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>test this out
 &lt;class &#39;str&#39;&gt;
-Help on class str in module builtins:
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on class str in module builtins:
 
 class str(object)
  |  str(object=&#39;&#39;) -&gt; str
@@ -3157,7 +3159,7 @@ True
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate object at 0x000001DC0CCBDAD0&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;enumerate object at 0x00000275A1F1F150&gt;
 &lt;class &#39;enumerate&#39;&gt;
 [(0, [1, 16, 9, 16, 25]), (1, [81, 256]), (2, [625, 1296])]
 </pre></div>
@@ -3277,16 +3279,14 @@ True
 <span class="nb">print</span><span class="p">(</span><span class="n">quotient</span><span class="p">,</span> <span class="n">remainder</span><span class="p">)</span>
 <span class="c1">#note that 46 = 6*7 + 4</span>
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;In terms of integer division: </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">quotient</span><span class="o">*</span><span class="n">m</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">remainder</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">quotient</span><span class="si">}</span><span class="s2">*</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> + </span><span class="si">{</span><span class="n">remainder</span><span class="si">}</span><span class="s2">. Where do the variables n, m, quotient, and remainder show up this equation?&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For integer division, </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = quotient*</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> + remainder&quot;</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;For integer division, </span><span class="si">{</span><span class="n">n</span><span class="si">}</span><span class="s2"> = quotient*</span><span class="si">{</span><span class="n">m</span><span class="si">}</span><span class="s2"> + remainder&quot;</span><span class="p">)</span>
 <span class="c1">#for an f-string (format string), any variable you wrap in curly brackets will display</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+4
 6 4
 In terms of integer division: 46 = 42 + 4 = 6*7 + 4. Where do the variables n, m, quotient, and remainder show up this equation?
 For integer division, 46 = quotient*7 + remainder
@@ -3307,7 +3307,9 @@ For integer division, 46 = quotient*7 + remainder
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5.0
-5
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
 5
 </pre></div>
 </div>
@@ -3650,8 +3652,6 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 </div>
 </div>
 </div>
-<p>Values can be almost anything that you want.</p>
-<p>Keys are more tricky, not just anything can be a key in a dictionary. They must be immutable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
@@ -3673,6 +3673,18 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="c1">#only need to run this line once per restart of your notebook. This imports the math package.</span>
 <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4142135623730951
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -3735,10 +3747,12 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 </div>
 </div>
 </div>
+<p>Values can be almost anything that you want.</p>
+<p>Keys are more tricky, not just anything can be a key in a dictionary. They must be immutable.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#update the value of &quot;B&quot;</span>
-<span class="n">d</span><span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">85</span>
+<span class="n">d</span><span class="p">[</span><span class="s2">&quot;B&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">80</span>
 </pre></div>
 </div>
 </div>
@@ -3751,7 +3765,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 90,
- &#39;B&#39;: 85,
+ &#39;B&#39;: 80,
  &#39;C&#39;: 70,
  &#39;D&#39;: 60,
  &#39;F&#39;: 0,
@@ -3780,7 +3794,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 90,
- &#39;B&#39;: 85,
+ &#39;B&#39;: 80,
  &#39;C&#39;: 70,
  &#39;D&#39;: 60,
  &#39;F&#39;: 0,
@@ -3795,7 +3809,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 </div>
 </div>
 </div>
-<p>Notice, you can only have one value for each key.</p>
+<p><strong>Notice</strong>: you can only have one value for each key.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">d</span><span class="p">[</span><span class="s2">&quot;0&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;Hello&quot;</span><span class="p">:</span><span class="s2">&quot;first word&quot;</span><span class="p">,</span><span class="s2">&quot;World&quot;</span><span class="p">:</span><span class="s2">&quot;second word&quot;</span><span class="p">}</span>
@@ -3811,7 +3825,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 90,
- &#39;B&#39;: 85,
+ &#39;B&#39;: 80,
  &#39;C&#39;: 70,
  &#39;D&#39;: 60,
  &#39;F&#39;: 0,
@@ -3836,7 +3850,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 90,
- &#39;B&#39;: 85,
+ &#39;B&#39;: 80,
  &#39;C&#39;: 70,
  &#39;D&#39;: 60,
  &#39;F&#39;: 0,
@@ -3864,11 +3878,32 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">180</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">181</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Error! Lists cannot go in a set</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">myset</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]}</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mylist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">18</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+
+<span class="n">mylist2</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">18</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist2</span><span class="p">)</span>
+
+<span class="n">mylist</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3, 3, 7, 18]
+[-9, 3, 7, 18]
+[-9, 3, 7, 18]
 </pre></div>
 </div>
 </div>
@@ -3890,7 +3925,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">182</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">184</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">d</span><span class="p">[[</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">]]</span> <span class="o">=</span> <span class="s2">&quot;Yasmeen&quot;</span>
 
 <span class="ne">TypeError</span>: unhashable type: &#39;list&#39;
@@ -3914,7 +3949,7 @@ z is a &lt;class &#39;float&#39;&gt; and 5 is an &lt;class &#39;int&#39;&gt;
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;A&#39;: 90,
- &#39;B&#39;: 85,
+ &#39;B&#39;: 80,
  &#39;C&#39;: 70,
  &#39;D&#39;: 60,
  &#39;F&#39;: 0,
@@ -4040,7 +4075,7 @@ e
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">192</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">194</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1">#Don&#39;t expect this to work</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="nb">dict</span><span class="p">(</span><span class="n">mylist</span><span class="p">)</span>
 
@@ -4101,7 +4136,7 @@ e
 <p>It’s worth noting we can cast booleans into integers. This is not required, since we can add booleans directly to integers anyways. :)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> 
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span>
 </pre></div>
 </div>
 </div>
@@ -4171,6 +4206,18 @@ e
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="o">+</span> <span class="kc">True</span> <span class="o">+</span> <span class="p">(</span><span class="mi">7</span><span class="o">/</span><span class="mi">11</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.3684144439325134
+</pre></div>
+</div>
+</div>
+</div>
 <section id="casting-exercise">
 <h4>Casting Exercise<a class="headerlink" href="#casting-exercise" title="Link to this heading">#</a></h4>
 <p>Take an integer, cast it into a string, and use this to try and count the number of times 2 appears in the string. You can test this on
@@ -4194,7 +4241,7 @@ e
 </section>
 </section>
 <section id="while-loop-example-and-new-commands-try-and-except">
-<h3>While loop example, and new commands try and except<a class="headerlink" href="#while-loop-example-and-new-commands-try-and-except" title="Link to this heading">#</a></h3>
+<h3>While loop example, and new commands <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code><a class="headerlink" href="#while-loop-example-and-new-commands-try-and-except" title="Link to this heading">#</a></h3>
 <p>Question: How many times can we run <code class="docutils literal notranslate"><span class="pre">numbers.pop(4)</span></code> method before we reach an error?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -4216,7 +4263,7 @@ e
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">IndexError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">204</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">207</span><span class="p">],</span> <span class="n">line</span> <span class="mi">5</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">while</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1">#this would cause an infinite loop, but an error will occur eventually that stops this.</span>
 <span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
@@ -4247,7 +4294,7 @@ e
 <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="k">try</span><span class="p">:</span>   <span class="c1">#try attempts to run the code below. An error message will not show if we run into an error</span>
-    <span class="k">while</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>   <span class="c1">#this would cause an infinite loop, but an error will occur eventually that stops this.</span>
+    <span class="k">while</span> <span class="n">a</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>  <span class="c1">#this would cause an infinite loop, but an error will occur eventually that stops this.</span>
         <span class="n">numbers</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
         <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span> <span class="c1">#shortcut for count = count + 1</span>
@@ -4272,12 +4319,29 @@ e
 <p>Note that if there is no error, nothing is output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import math</span>
 <span class="n">x</span> <span class="o">=</span> <span class="mi">25</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#import math</span>
+<span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">49</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-49 does not have a real square root
 </pre></div>
 </div>
 </div>
@@ -4289,14 +4353,32 @@ e
 <span class="k">try</span><span class="p">:</span>  <span class="c1">#What we attempt to run</span>
     <span class="n">sqsqsq</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span> <span class="c1">#If there&#39;s an error</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>  <span class="c1">#If there&#39;s no error</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> has a real square root equal to </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">sqsqsq</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> has a real square root equal to </span><span class="si">{</span><span class="n">sqsqsq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16 has a real square root equal to 4.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">16</span>
+<span class="k">try</span><span class="p">:</span>  <span class="c1">#What we attempt to run</span>
+    <span class="n">sqsqsq</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span> <span class="c1">#If there&#39;s an error</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>  <span class="c1">#If there&#39;s no error</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> has a real square root equal to </span><span class="si">{</span><span class="n">sqsqsq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-16 does not have a real square root
 </pre></div>
 </div>
 </div>
@@ -4308,9 +4390,9 @@ e
 <span class="k">try</span><span class="p">:</span>
     <span class="n">sqsqsq</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
 <span class="k">except</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> has square root equal to </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">sqsqsq</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> has square root equal to </span><span class="si">{</span><span class="n">sqsqsq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>  <span class="c1">#runs no matter what</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⠀⢀⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄</span><span class="se">\n</span><span class="s2">⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⡉⠙⠻⢿⣿⣿⣿⣿⣿⢿⣦</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⡆⠀⠀⢻⣿⣿⣿⣿⡆⠈⢳⡄</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⠈⢿⣿⣿⣿⣷⠖⠀⠀⣿⣿⣿⣿⣿⣄⠀⣿⡄</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣇⠀⢄⡙⠋⠻⡄⠀⣼⣿⣿⣿⣩⠟⠟⠀⣼⣿⡄</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣭⣤⣤⣴⣿⣿⣿⣿⣿⣿⣿⣦⣴⣿⣿⣷</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⢿⣿⣿⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⢰⣶⣄</span><span class="se">\n</span><span class="s2">⣏⣉⣛⣛⣛⣛⣥⣶⣾⣿⣿⣿⣷⡝⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⡇</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⠟</span><span class="se">\n</span><span class="s2">⡇⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠈⠁</span><span class="se">\n</span><span class="s2">⡇⠀⠹⣿⣿⣿⡿⠿⠛⣋⣥⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -4342,7 +4424,7 @@ e
 <span class="k">except</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> does not have a real square root&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="si">}</span><span class="s2"> has square root equal to </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">sqsqsq</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s2"> has square root equal to </span><span class="si">{</span><span class="n">sqsqsq</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 <span class="k">finally</span><span class="p">:</span>  <span class="c1">#runs no matter what</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;⠀⢀⣤⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄</span><span class="se">\n</span><span class="s2">⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⡉⠙⠻⢿⣿⣿⣿⣿⣿⢿⣦</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣿⡆⠀⠀⢻⣿⣿⣿⣿⡆⠈⢳⡄</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⠈⢿⣿⣿⣿⣷⠖⠀⠀⣿⣿⣿⣿⣿⣄⠀⣿⡄</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣇⠀⢄⡙⠋⠻⡄⠀⣼⣿⣿⣿⣩⠟⠟⠀⣼⣿⡄</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣭⣤⣤⣴⣿⣿⣿⣿⣿⣿⣿⣦⣴⣿⣿⣷</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⢿⣿⣿⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⢰⣶⣄</span><span class="se">\n</span><span class="s2">⣏⣉⣛⣛⣛⣛⣥⣶⣾⣿⣿⣿⣷⡝⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⡇</span><span class="se">\n</span><span class="s2">⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⠟</span><span class="se">\n</span><span class="s2">⡇⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢋⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠈⠁</span><span class="se">\n</span><span class="s2">⡇⠀⠹⣿⣿⣿⡿⠿⠛⣋⣥⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠃</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
@@ -4457,7 +4539,7 @@ e
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#casting-exercise">Casting Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop-example-and-new-commands-try-and-except">While loop example, and new commands try and except</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#while-loop-example-and-new-commands-try-and-except">While loop example, and new commands <code class="docutils literal notranslate"><span class="pre">try</span></code> and <code class="docutils literal notranslate"><span class="pre">except</span></code></a></li>
 </ul>
 </li>
 </ul>
