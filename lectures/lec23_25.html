@@ -34,7 +34,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -203,6 +203,8 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Extra</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="cindy_polynomial_regression.html">Exercise: Polynomial Regression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="miles_newton_method.html">Newton’s Method: Golden Ratio</a></li>
 <li class="toctree-l1"><a class="reference internal" href="FA24_lec23_24.html">Lectures 23-24 from FA24</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../homework/pyhw4_FA24.html">Python HW #4 from FA24</a></li>
 <li class="toctree-l1"><a class="reference internal" href="extra_art.html">Extra Art</a></li>
@@ -399,6 +401,7 @@
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-arrays-of-1-and-1">Generate random arrays of -1 and +1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-3-times-5-numpy-array-of-random-real-numbers-between-1-and-4">Create a <span class="math notranslate nohighlight">\(3 \times 5\)</span> NumPy array of random real numbers between -1 and 4.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting-in-numpy">Broadcasting in Numpy</a></li>
 </ul>
@@ -411,7 +414,7 @@
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-in-base-python-vs-logic-in-numpy">Logic in base Python vs. Logic in NumPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-rules">General Rules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-small-note-generate-random-arrays-of-1-and-1">One more small note: Generate random arrays of -1 and +1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension-exercise">List comprehension exercise</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-axis-keyword-argument">The <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument</a></li>
@@ -446,8 +449,8 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[  8,  26,  27,  -4,  25],
-       [ 24,   4,  27, -18, -13]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 11,  31,  38,   5,  -7],
+       [-13,   6,  35,   5, -10]])
 </pre></div>
 </div>
 </div>
@@ -489,7 +492,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 6,  8, 19,  8, 36, 23, 26, 22, 28, 23], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([15, 15, 14, 28,  9, 22, 27, 10, 20, 28], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -504,7 +507,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([23, 26, 26, 36, 23], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([14, 20, 10, 15, 28], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -625,11 +628,50 @@ choice(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([23, 26, 23, 22,  6], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 9, 10, 28, 15, 27], dtype=int64)
 </pre></div>
 </div>
 </div>
 </div>
+<section id="generate-random-arrays-of-1-and-1">
+<h3>Generate random arrays of -1 and +1<a class="headerlink" href="#generate-random-arrays-of-1-and-1" title="Link to this heading">#</a></h3>
+<p>Method 1: Randomly generate an array with zeros and ones, and then take -1 to the power of this array</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myexponents</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">myexponents</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">myexponents</span><span class="p">)</span>  <span class="c1">#broadcast -1 as the base and the array as the exponent.</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 1 0 1 0 1 1 0 0]]
+[[ 1  1 -1  1 -1  1 -1 -1  1  1]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Method 2: use <code class="docutils literal notranslate"><span class="pre">rng.choice</span></code> to choose from +/1 from list <code class="docutils literal notranslate"><span class="pre">[-1,1]</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pm_one_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">pm_one_list</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1,  1, -1,  1, -1, -1, -1,  1, -1, -1]])
+</pre></div>
+</div>
+</div>
+</div>
+</section>
 <section id="create-a-3-times-5-numpy-array-of-random-real-numbers-between-1-and-4">
 <h3>Create a <span class="math notranslate nohighlight">\(3 \times 5\)</span> NumPy array of random real numbers between -1 and 4.<a class="headerlink" href="#create-a-3-times-5-numpy-array-of-random-real-numbers-between-1-and-4" title="Link to this heading">#</a></h3>
 <p>You might expect this to work, but it won’t :(</p>
@@ -642,7 +684,7 @@ choice(...) method of numpy.random._generator.Generator instance
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 
 <span class="nn">File numpy\\random\\_generator.pyx:299,</span> in <span class="ni">numpy.random._generator.Generator.random</span><span class="nt">()</span>
@@ -652,6 +694,7 @@ choice(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 </div>
+<p>Unlike with <code class="docutils literal notranslate"><span class="pre">rng.integers</span></code>, we cannot specify a start and and end for <code class="docutils literal notranslate"><span class="pre">rng.random</span></code>. All decimals generated are only on the half-interval <span class="math notranslate nohighlight">\([0,1)\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">rng</span><span class="o">.</span><span class="n">random</span><span class="p">)</span>
@@ -724,9 +767,9 @@ random(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.62958547, 0.73469202, 0.05272779, 0.76994437, 0.19363954],
-       [0.16416291, 0.53376864, 0.33454566, 0.12711603, 0.40868692],
-       [0.04089974, 0.05712006, 0.78428646, 0.2668983 , 0.95610659]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.4351357 , 0.75738443, 0.11835377, 0.59159518, 0.98450651],
+       [0.11691309, 0.41244212, 0.73691881, 0.11565484, 0.80343623],
+       [0.08359815, 0.38898155, 0.33128153, 0.78627689, 0.80506214]])
 </pre></div>
 </div>
 </div>
@@ -739,9 +782,9 @@ random(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.77935796, 0.9365339 , 2.57565899, 3.68934876, 4.72601441],
-       [2.74363409, 0.74755171, 2.09338464, 1.54550909, 3.50048807],
-       [2.36761108, 2.54064617, 0.33242503, 0.73985883, 3.37618636]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.37114301, 4.33224524, 2.38185517, 0.0169457 , 1.78161437],
+       [2.77196358, 2.44963474, 0.63813523, 0.091572  , 4.54162559],
+       [1.35828272, 3.59162921, 2.06014983, 2.40260719, 0.59431996]])
 </pre></div>
 </div>
 </div>
@@ -754,9 +797,9 @@ random(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 2.83162089,  2.36833315,  1.40749352,  0.31591424, -0.62285846],
-       [ 3.83007292,  1.95114833,  0.56955891,  0.71878609,  0.69272971],
-       [-0.22996212,  1.02237447, -0.98335788,  3.14291353,  1.28689329]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.25040088,  1.60793982,  3.00599269,  3.87194487, -0.69340597],
+       [-0.65434456,  3.23935575, -0.6190951 ,  1.65757288,  0.40093922],
+       [-0.81211975,  1.44316818,  1.50160474, -0.73887563, -0.07211051]])
 </pre></div>
 </div>
 </div>
@@ -878,8 +921,8 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.00309128, 1.84779803, 1.86780703, 1.99934545, 1.88737993,
-       1.79974227, 1.90824816, 1.87065768, 2.10615031, 2.11634071])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2.06831234, 1.97520189, 2.0433605 , 1.95416181, 1.76554827,
+       1.98266797, 1.92869087, 2.03187151, 2.02938723, 1.93698387])
 </pre></div>
 </div>
 </div>
@@ -927,16 +970,16 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ThisMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ThisMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ThisMat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 0 0]
- [0 0 0 0]
- [0 0 0 0]
- [0 0 0 0]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
@@ -949,7 +992,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 3, 3, 3], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3., 3., 3., 3.])
 </pre></div>
 </div>
 </div>
@@ -961,7 +1004,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 3, 3, 3], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3., 3., 3., 3.])
 </pre></div>
 </div>
 </div>
@@ -974,15 +1017,15 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 0 3]
- [0 0 0 3]
- [0 0 0 3]
- [0 0 0 3]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 3.]
+ [0. 0. 0. 3.]
+ [0. 0. 0. 3.]
+ [0. 0. 0. 3.]]
 </pre></div>
 </div>
 </div>
 </div>
-<p><strong>Single for loop method:</strong> Use a single loop on the rows of <code class="docutils literal notranslate"><span class="pre">ThisMat</span></code>, add <code class="docutils literal notranslate"><span class="pre">row</span></code> (the row index) to each row</p>
+<p><strong>Single for-loop method:</strong> Use a single loop on the rows of <code class="docutils literal notranslate"><span class="pre">ThisMat</span></code>, add <code class="docutils literal notranslate"><span class="pre">row</span></code> (the row index) to each row</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ThisMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
@@ -1045,7 +1088,7 @@ normal(...) method of numpy.random._generator.Generator instance
 <p><strong>Loopless Method 1:</strong> Broadcast using addition. Generate a (4,4) matrix of zeros, and broadcast + <code class="docutils literal notranslate"><span class="pre">np.arange(4)</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ThatMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ThatMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">ThatMat</span><span class="p">)</span>
 <span class="n">ThatMat</span> <span class="o">+=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">ThatMat</span>
@@ -1053,16 +1096,16 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 0 0]
- [0 0 0 0]
- [0 0 0 0]
- [0 0 0 0]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 1, 2, 3],
-       [0, 1, 2, 3],
-       [0, 1, 2, 3],
-       [0, 1, 2, 3]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 1., 2., 3.],
+       [0., 1., 2., 3.],
+       [0., 1., 2., 3.],
+       [0., 1., 2., 3.]])
 </pre></div>
 </div>
 </div>
@@ -1074,10 +1117,10 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0, 0, 0, 0],
-       [1, 1, 1, 1],
-       [2, 2, 2, 2],
-       [3, 3, 3, 3]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0., 0., 0., 0.],
+       [1., 1., 1., 1.],
+       [2., 2., 2., 2.],
+       [3., 3., 3., 3.]])
 </pre></div>
 </div>
 </div>
@@ -1085,24 +1128,24 @@ normal(...) method of numpy.random._generator.Generator instance
 <p><strong>Loopless Method 2</strong>: Replace every row of <code class="docutils literal notranslate"><span class="pre">np.zeros((4,4))</span></code> with <code class="docutils literal notranslate"><span class="pre">np.arange(4)</span></code> with careful slicing. Then take the transpose.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OurMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OurMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">OurMat</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">OurMat</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 0 0]
- [0 1 2 3]
- [0 0 0 0]
- [0 0 0 0]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0.]
+ [0. 1. 2. 3.]
+ [0. 0. 0. 0.]
+ [0. 0. 0. 0.]]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OurMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="nb">int</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">OurMat</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">OurMat</span><span class="p">[:]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1">#replace all rows with np.arange(4). The shape broadcasts across the entire array</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">OurMat</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span> <span class="c1">#blank line, for spacing the outputs</span>
@@ -1111,15 +1154,16 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 1 2 3]
- [0 1 2 3]
- [0 1 2 3]
- [0 1 2 3]]
-
-[[0 0 0 0]
- [1 1 1 1]
- [2 2 2 2]
- [3 3 3 3]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 1. 2. 3.]
+ [0. 1. 2. 3.]
+ [0. 1. 2. 3.]
+ [0. 1. 2. 3.]]
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0.]
+ [1. 1. 1. 1.]
+ [2. 2. 2. 2.]
+ [3. 3. 3. 3.]]
 </pre></div>
 </div>
 </div>
@@ -1151,7 +1195,11 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 </div>
-<p>There are 2 possible workarounds: Write an array by hand or reshape the array</p>
+<p>There are 2 possible workarounds:</p>
+<ul class="simple">
+<li><p>Write an array by hand</p></li>
+<li><p>Reshape the array</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span> <span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">])</span> <span class="c1">#A little annoying to write, even though it&#39;s only 4 entries</span>
@@ -1229,16 +1277,16 @@ normal(...) method of numpy.random._generator.Generator instance
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 
-<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#one-line approach to the matrix just before this section</span>
+<span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span> <span class="c1">#one-line approach to the matrix just before this section</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 0 0]
- [1 1 1 1]
- [2 2 2 2]
- [3 3 3 3]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0.]
+ [1. 1. 1. 1.]
+ [2. 2. 2. 2.]
+ [3. 3. 3. 3.]]
 </pre></div>
 </div>
 </div>
@@ -1250,7 +1298,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3, 3, 3, 3], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([3., 3., 3., 3.])
 </pre></div>
 </div>
 </div>
@@ -1264,7 +1312,7 @@ normal(...) method of numpy.random._generator.Generator instance
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">38</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">41</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
 
 <span class="ne">ValueError</span>: could not broadcast input array from shape (2,) into shape (4,)
@@ -1281,10 +1329,10 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  0,  0,  0],
-       [ 1,  1,  1,  1],
-       [ 2,  2,  2,  2],
-       [ 2, 10,  2, 10]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.,  0.,  0.,  0.],
+       [ 1.,  1.,  1.,  1.],
+       [ 2.,  2.,  2.,  2.],
+       [ 2., 10.,  2., 10.]])
 </pre></div>
 </div>
 </div>
@@ -1297,10 +1345,10 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0,  0,  0,  0],
-       [ 1,  1,  1,  1],
-       [ 2,  2,  2,  2],
-       [ 2,  2, 10, 10]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.,  0.,  0.,  0.],
+       [ 1.,  1.,  1.,  1.],
+       [ 2.,  2.,  2.,  2.],
+       [ 2.,  2., 10., 10.]])
 </pre></div>
 </div>
 </div>
@@ -1313,10 +1361,10 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 5,  5,  5,  5],
-       [ 1,  1,  1,  1],
-       [ 2,  2,  2,  2],
-       [ 2,  2, 10, 10]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 5.,  5.,  5.,  5.],
+       [ 1.,  1.,  1.,  1.],
+       [ 2.,  2.,  2.,  2.],
+       [ 2.,  2., 10., 10.]])
 </pre></div>
 </div>
 </div>
@@ -1329,50 +1377,51 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[99, 99,  5,  5],
-       [99, 99,  1,  1],
-       [99, 99,  2,  2],
-       [99, 99, 10, 10]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[99., 99.,  5.,  5.],
+       [99., 99.,  1.,  1.],
+       [99., 99.,  2.,  2.],
+       [99., 99., 10., 10.]])
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">10.9</span><span class="p">,</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="c1">#The array had int64 data type, so the decimals were truncated.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">10.9</span><span class="p">,</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span>
 <span class="n">arr</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[99, 99,  5,  5],
-       [99, 99,  1,  1],
-       [99, 99,  2,  2],
-       [ 2, 10, -2, 10]], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[99. , 99. ,  5. ,  5. ],
+       [99. , 99. ,  1. ,  1. ],
+       [99. , 99. ,  2. ,  2. ],
+       [ 2.5, 10.9, -2.5, 10. ]])
 </pre></div>
 </div>
 </div>
 </div>
+<p>Note: if our data type is an integer, then decimals will be truncated</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">float_arr</span> <span class="o">=</span> <span class="n">arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float64</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">float_arr</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">int_arr</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">4</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int64</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int_arr</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">()</span>
-<span class="n">float_arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">10.9</span><span class="p">,</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="c1">#The array had int64 data type, so the decimals were truncated.</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">float_arr</span><span class="p">)</span>
+<span class="n">int_arr</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="mf">2.5</span><span class="p">,</span><span class="mf">10.9</span><span class="p">,</span><span class="o">-</span><span class="mf">2.5</span><span class="p">,</span><span class="mi">10</span><span class="p">]</span> <span class="c1">#The array had int64 data type, so the decimals were truncated.</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">int_arr</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0. 0.]
- [1. 1. 1. 1.]
- [2. 2. 2. 2.]
- [3. 3. 3. 3.]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0 0 0 0]
+ [1 1 1 1]
+ [2 2 2 2]
+ [3 3 3 3]]
 
-[[ 0.   0.   0.   0. ]
- [ 1.   1.   1.   1. ]
- [ 2.   2.   2.   2. ]
- [ 2.5 10.9 -2.5 10. ]]
+[[ 0  0  0  0]
+ [ 1  1  1  1]
+ [ 2  2  2  2]
+ [ 2 10 -2 10]]
 </pre></div>
 </div>
 </div>
@@ -1384,15 +1433,17 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0. ,  0. ,  0. ,  0. ],
-       [ 2. ,  2. ,  2. ,  2. ],
-       [ 4. ,  4. ,  4. ,  4. ],
-       [ 5. , 21.8, -5. , 20. ]])
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">arr</span> <span class="o">+</span> <span class="n">float_arr</span>
+
+<span class="ne">NameError</span>: name &#39;float_arr&#39; is not defined
 </pre></div>
 </div>
 </div>
 </div>
-<p><span style="color:red"><strong>Warning!</strong></span> Lists cannot be reshaped. We need numpy arrays to gain access to the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> method</p>
+<p><span style="color:red"><strong>Warning!</strong></span> Lists cannot be reshaped. They don’t even have a <code class="docutils literal notranslate"><span class="pre">shape</span></code> attribute! We need numpy arrays to gain access to the <code class="docutils literal notranslate"><span class="pre">reshape</span></code> method.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
@@ -1402,22 +1453,10 @@ normal(...) method of numpy.random._generator.Generator instance
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">46</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">49</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
 
 <span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;reshape&#39;
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 4)
 </pre></div>
 </div>
 </div>
@@ -1431,10 +1470,22 @@ normal(...) method of numpy.random._generator.Generator instance
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">48</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">50</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
 
 <span class="ne">AttributeError</span>: &#39;list&#39; object has no attribute &#39;shape&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">arr</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(4, 4)
 </pre></div>
 </div>
 </div>
@@ -1741,7 +1792,7 @@ normal(...) method of numpy.random._generator.Generator instance
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">65</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">68</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">NewArr</span> <span class="o">+</span> <span class="p">[</span><span class="mi">5</span> <span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">]</span>
 
 <span class="ne">ValueError</span>: operands could not be broadcast together with shapes (4,6) (4,) 
@@ -1758,7 +1809,7 @@ normal(...) method of numpy.random._generator.Generator instance
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">66</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">69</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">NewArr</span> <span class="o">+</span> <span class="p">[[</span><span class="mi">5</span> <span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">9</span><span class="p">]]</span>
 
 <span class="ne">ValueError</span>: operands could not be broadcast together with shapes (4,6) (1,4) 
@@ -1854,26 +1905,26 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-38,
- 37,
- -25,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3,
  6,
- -11,
- -29,
- -23,
- -2,
- -24,
- 15,
- 46,
+ 30,
+ 26,
  -17,
+ 32,
+ -2,
+ -31,
+ 16,
+ 35,
+ -36,
+ -28,
+ -1,
+ 8,
+ -29,
  25,
- 46,
- -8,
- 25,
- 36,
- -15,
- -11,
- -19]
+ -39,
+ -44,
+ -9,
+ -44]
 </pre></div>
 </div>
 </div>
@@ -1888,7 +1939,7 @@ normal(...) method of numpy.random._generator.Generator instance
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">73</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">76</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">mylist</span> <span class="o">&lt;</span> <span class="mi">10</span>
 
 <span class="ne">TypeError</span>: &#39;&lt;&#39; not supported between instances of &#39;list&#39; and &#39;int&#39;
@@ -1904,7 +1955,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, -2, -8]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3, 6, -2, -1, 8, -9]
 </pre></div>
 </div>
 </div>
@@ -1922,7 +1973,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, -2, -8]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3, 6, -2, -1, 8, -9]
 </pre></div>
 </div>
 </div>
@@ -1935,7 +1986,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, -2, -8]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3, 6, -2, -1, 8, -9]
 </pre></div>
 </div>
 </div>
@@ -1948,8 +1999,8 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-38,  37, -25,   6, -11, -29, -23,  -2, -24,  15,  46, -17,  25,
-        46,  -8,  25,  36, -15, -11, -19], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ -3,   6,  30,  26, -17,  32,  -2, -31,  16,  35, -36, -28,  -1,
+         8, -29,  25, -39, -44,  -9, -44], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -1961,8 +2012,8 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True, False,  True,  True,  True,  True,  True,  True,  True,
-       False, False,  True, False, False,  True, False, False,  True,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True, False, False,  True, False,  True,  True, False,
+       False,  True,  True,  True,  True,  True, False,  True,  True,
         True,  True])
 </pre></div>
 </div>
@@ -1977,8 +2028,8 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False False False  True False False False  True False False False False
- False False  True False False False False False]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ True  True False False False False  True False False False False False
+  True  True False False False False  True False]
 </pre></div>
 </div>
 </div>
@@ -1991,7 +2042,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 6, -2, -8], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-3,  6, -2, -1,  8, -9], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -2003,7 +2054,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 6, -2, -8], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-3,  6, -2, -1,  8, -9], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -2019,8 +2070,8 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6, -2, -8]
-[6, -2, -8]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-3, 6, -2, -1, 8, -9]
+[-3, 6, -2, -1, 8, -9]
 </pre></div>
 </div>
 </div>
@@ -2035,10 +2086,10 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False False False  True False False False  True False False False False
- False False  True False False False False False]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ True  True False False False False  True False False False False False
+  True  True False False False False  True False]
 
-[ 6 -2 -8]
+[-3  6 -2 -1  8 -9]
 </pre></div>
 </div>
 </div>
@@ -2052,10 +2103,10 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False False False  True False False False  True False False False False
- False False  True False False False False False]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ True  True False False False False  True False False False False False
+  True  True False False False False  True False]
 
-[ 6 -2 -8]
+[-3  6 -2 -1  8 -9]
 </pre></div>
 </div>
 </div>
@@ -2070,7 +2121,7 @@ normal(...) method of numpy.random._generator.Generator instance
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">85</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">88</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">(</span><span class="n">arr</span> <span class="o">&gt;</span> <span class="o">-</span><span class="mi">10</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">arr</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">)</span>
 
 <span class="ne">ValueError</span>: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
@@ -2086,7 +2137,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True,  True,  True,  True,  True,  True,  True,  True,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False,  True,  True,  True,  True,  True,  True,  True,  True,
         True,  True,  True,  True,  True,  True,  True,  True,  True,
         True,  True])
 </pre></div>
@@ -2100,9 +2151,9 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False,  True, False, False, False,  True, False,
-       False, False, False, False, False,  True, False, False, False,
-       False, False])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ True,  True, False, False, False, False,  True, False, False,
+       False, False, False,  True,  True, False, False, False, False,
+        True, False])
 </pre></div>
 </div>
 </div>
@@ -2139,7 +2190,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
 </pre></div>
 </div>
 </div>
@@ -2157,38 +2208,57 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 </section>
-<section id="one-more-small-note-generate-random-arrays-of-1-and-1">
-<h3>One more small note: Generate random arrays of -1 and +1<a class="headerlink" href="#one-more-small-note-generate-random-arrays-of-1-and-1" title="Link to this heading">#</a></h3>
+<section id="list-comprehension-exercise">
+<h3>List comprehension exercise<a class="headerlink" href="#list-comprehension-exercise" title="Link to this heading">#</a></h3>
+<p>Use list comprehension to create a list of elements of the form <span class="math notranslate nohighlight">\(x^{x-2}\)</span>, where <span class="math notranslate nohighlight">\(x = -5, -2, 1, 4, 7,...,19 \)</span></p>
+<p>Create a 2nd list of the reciprocals of these numbers.</p>
+<p>Can you recreate these lists using loops? What about with numpy arrays?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">myexponents</span> <span class="o">=</span> <span class="n">rng</span><span class="o">.</span><span class="n">integers</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">myexponents</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">((</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">myexponents</span><span class="p">)</span>  <span class="c1">#broadcast -1 as the base and the array as the exponent.</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">complist</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span> <span class="mi">3</span><span class="p">)]</span>
+<span class="n">complist</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 0 1 1 0 0 0 0 1 0]]
-[[-1  1 -1 -1  1  1  1  1 -1  1]]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-1.28e-05,
+ 0.0625,
+ 1.0,
+ 16,
+ 16807,
+ 100000000,
+ 1792160394037,
+ 72057594037927936,
+ 5480386857784802185939]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p_or_m_one_list</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">rng</span><span class="o">.</span><span class="n">choice</span><span class="p">(</span><span class="n">p_or_m_one_list</span><span class="p">,</span> <span class="n">size</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">recip_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">complist</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">recip_list</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1, -1,  1,  1, -1, -1, -1,  1,  1, -1]])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[-78125.0, 16.0, 1.0, 0.0625, 5.9499018266198606e-05, 1e-08, 5.579857714338902e-13, 1.3877787807814457e-17, 1.8246887052864086e-22]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Dictionaries also have their own version of comprehension</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fraction_dict</span> <span class="o">=</span> <span class="p">{</span><span class="n">n</span><span class="o">/</span><span class="mi">2</span><span class="p">:</span> <span class="n">n</span><span class="o">%</span><span class="k">2</span> for n in range(1,100)}
+<span class="nb">print</span><span class="p">(</span><span class="n">fraction_dict</span><span class="p">[</span><span class="mi">7</span><span class="o">/</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fraction_dict</span><span class="p">[</span><span class="mi">4</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+0
 </pre></div>
 </div>
 </div>
@@ -2221,7 +2291,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[4 1 6 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[6 5 4 5]
 </pre></div>
 </div>
 </div>
@@ -2263,7 +2333,7 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.284
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.282
 </pre></div>
 </div>
 </div>
@@ -2282,11 +2352,11 @@ normal(...) method of numpy.random._generator.Generator instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: total: 11.3 s
-Wall time: 11.4 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: total: 53.1 s
+Wall time: 56.9 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.284211
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.285124
 </pre></div>
 </div>
 </div>
@@ -2300,16 +2370,16 @@ Wall time: 11.4 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[6 6 5 4]
- [5 6 3 4]
- [6 4 3 5]
- [1 4 5 5]
- [1 4 5 1]
- [3 4 5 5]
- [2 1 1 3]
- [5 4 5 3]
- [1 5 2 5]
- [4 1 6 3]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 4 6 4]
+ [3 3 1 4]
+ [2 3 1 2]
+ [5 1 6 3]
+ [5 2 6 4]
+ [4 4 5 5]
+ [2 4 6 1]
+ [1 2 3 3]
+ [2 2 2 3]
+ [6 4 1 5]]
 </pre></div>
 </div>
 </div>
@@ -2425,16 +2495,16 @@ apply_along_axis(func1d, axis, arr, *args, **kwargs)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[6 6 5 4]
- [5 6 3 4]
- [6 4 3 5]
- [1 4 5 5]
- [1 4 5 1]
- [3 4 5 5]
- [2 1 1 3]
- [5 4 5 3]
- [1 5 2 5]
- [4 1 6 3]]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1 4 6 4]
+ [3 3 1 4]
+ [2 3 1 2]
+ [5 1 6 3]
+ [5 2 6 4]
+ [4 4 5 5]
+ [2 4 6 1]
+ [1 2 3 3]
+ [2 2 2 3]
+ [6 4 1 5]]
 </pre></div>
 </div>
 </div>
@@ -2459,7 +2529,7 @@ apply_along_axis(func1d, axis, arr, *args, **kwargs)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 6, 6, 5, 5, 5, 3, 5, 5, 6], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 4, 3, 6, 6, 5, 6, 3, 3, 6], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -2471,7 +2541,7 @@ apply_along_axis(func1d, axis, arr, *args, **kwargs)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False,  True,  True,  True, False,  True,  True,
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([False, False, False, False, False,  True, False, False, False,
        False])
 </pre></div>
 </div>
@@ -2485,7 +2555,7 @@ apply_along_axis(func1d, axis, arr, *args, **kwargs)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 6, 6, 5], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 4, 6, 5], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -2500,7 +2570,7 @@ apply_along_axis(func1d, axis, arr, *args, **kwargs)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.1
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2
 </pre></div>
 </div>
 </div>
@@ -2531,27 +2601,27 @@ apply_along_axis(func1d, axis, arr, *args, **kwargs)
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>each experiment, we roll 4 dice, and find the max
 number of trials is 10
-[[6 2 3 3]
- [2 2 3 6]
- [1 5 2 2]
- [5 5 3 4]
- [3 2 6 2]
- [3 3 3 2]
- [6 1 6 2]
- [3 3 5 6]
- [5 5 5 6]
- [1 5 6 1]]
+[[1 6 1 1]
+ [5 6 6 2]
+ [2 5 2 5]
+ [2 1 2 5]
+ [4 2 2 5]
+ [3 5 1 4]
+ [6 2 1 5]
+ [3 4 1 2]
+ [4 4 2 3]
+ [3 3 2 3]]
 
-[6 6 5 5 6 3 6 6 6 6]
+[6 6 5 5 5 5 6 4 4 3]
 
-[False False  True  True False False False False False False]
+[False False  True  True  True  True False False False False]
 
-2
-0.2
-0.2
+4
+0.4
+0.4
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.4
 </pre></div>
 </div>
 </div>
@@ -2567,11 +2637,11 @@ number of trials is 10
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: total: 4.62 s
-Wall time: 4.62 s
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: total: 19.3 s
+Wall time: 21.1 s
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.28487
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.284805
 </pre></div>
 </div>
 </div>
@@ -2599,7 +2669,7 @@ Wall time: 4.62 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5, 6, 3, ..., 6, 5, 6], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 5, 3, ..., 6, 6, 6], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -2611,7 +2681,7 @@ Wall time: 4.62 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5, 6, 3, ..., 6, 5, 6], dtype=int64)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([6, 5, 3, ..., 6, 6, 6], dtype=int64)
 </pre></div>
 </div>
 </div>
@@ -2625,7 +2695,7 @@ Wall time: 4.62 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2
 </pre></div>
 </div>
 </div>
@@ -2638,7 +2708,7 @@ Wall time: 4.62 s
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.2
 </pre></div>
 </div>
 </div>
@@ -2653,7 +2723,7 @@ Wall time: 4.62 s
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AxisError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">117</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">120</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="p">(</span><span class="n">arr</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
 <span class="nn">File C:\ProgramData\anaconda3\Lib\site-packages\numpy\core\_methods.py:106,</span> in <span class="ni">_mean</span><span class="nt">(a, axis, dtype, out, keepdims, where)</span>
@@ -2712,11 +2782,11 @@ max(...) method of numpy.ndarray instance
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: total: 46.9 ms
-Wall time: 41.4 ms
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>CPU times: total: 141 ms
+Wall time: 187 ms
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.285424
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.283871
 </pre></div>
 </div>
 </div>
@@ -2785,7 +2855,7 @@ Wall time: 41.4 ms
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">123</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">126</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">np</span><span class="o">.</span><span class="n">concatenate</span><span class="p">((</span><span class="n">A</span><span class="p">,</span><span class="n">B</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
 
 <span class="ne">ValueError</span>: all the input array dimensions except for the concatenation axis must match exactly, but along dimension 1, the array at index 0 has size 3 and the array at index 1 has size 1
@@ -2876,6 +2946,7 @@ Wall time: 41.4 ms
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#random-numbers">Random Numbers</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#generate-random-arrays-of-1-and-1">Generate random arrays of -1 and +1</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-3-times-5-numpy-array-of-random-real-numbers-between-1-and-4">Create a <span class="math notranslate nohighlight">\(3 \times 5\)</span> NumPy array of random real numbers between -1 and 4.</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting-in-numpy">Broadcasting in Numpy</a></li>
 </ul>
@@ -2888,7 +2959,7 @@ Wall time: 41.4 ms
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#logic-in-base-python-vs-logic-in-numpy">Logic in base Python vs. Logic in NumPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#general-rules">General Rules</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#one-more-small-note-generate-random-arrays-of-1-and-1">One more small note: Generate random arrays of -1 and +1</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#list-comprehension-exercise">List comprehension exercise</a></li>
 </ul>
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-axis-keyword-argument">The <code class="docutils literal notranslate"><span class="pre">axis</span></code> keyword argument</a></li>
